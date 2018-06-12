@@ -9,6 +9,12 @@
       "page2": "Pagina 2 ",
       "database":"Banco de Dados",
       "project":"Projeto",
+      "mer":"MER",
+      "der":"DER",
+      "ddl":"DDL",
+      "dml":"DML",
+      "tcl":"TCL",
+      "plsql":"PLSQL",
       "relational":"Relacional",
       "activies":"Atividades"
     }

@@ -8,7 +8,13 @@
       "page1": "Page One",
       "page2": "Page Two",
       "database":"Database",
-      "project":" Project",
+      "project":"Project",
+      "mer":"MER",
+      "der":"DER",
+      "ddl":"DDL",
+      "dml":"DML",
+      "tcl":"TCL",
+      "plsql":"PLSQL",
       "relational":"Relational",
       "activies":"Activies"
     }
