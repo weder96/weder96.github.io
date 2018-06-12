@@ -166,7 +166,7 @@ html.fp-enabled,
     height: 4px;
     width: 4px;
     border: 0;
-    background: #333;
+    background: #FFFFFF  !important;
     left: 50%;
     top: 50%;
     margin: -2px 0 0 -2px;
@@ -179,6 +179,7 @@ html.fp-enabled,
 .fp-slidesNav ul li:hover a span{
     width: 10px;
     height: 10px;
+    background: #FFFFFF !important;
     margin: -5px 0px 0px -5px;
 }
 #fp-nav ul li .fp-tooltip {
