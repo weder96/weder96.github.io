@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Banco de Dados 2018</title>
+    <meta name="author" content="Matthew Howell" />
+    <meta name="description" content="fullPage continuous scrolling demo." />
+    <meta name="keywords"  content="fullpage,jquery,demo,scroll,loop,continuous" />
+    <meta name="Resource-type" content="Document" />
+
+
+    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="examples.css" />
+
+    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+    <!--[if IE]>
+        <script type="text/javascript">
+             var console = { log: function() {} };
+        </script>
+    <![endif]-->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" src="js/jquery.fullPage.js"></script>
+    <script type="text/javascript" src="examples.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/i18next-1.11.2.js"></script>
+    <script type="text/javascript" src="js/i18next-1.11.2.min.js"></script>
+
+</head>
+<body>
+
+        <a class="navbar-brand" href="#">
+                <span class="logo">
+                  <i class="fas fa-database light-logo fa-2x"></i>
+                </span>
+                <span class="text">
+                  <span class="line">Database</span>
+                  <span class="line sub">Plano de Ensino</span>
+                </span>
+              </a>
+
+
+
+<nav class="navbar-sidebar">
+<ul id="menu" class="i18n navbar-nav">
+    <img id="band" src="imgs/brasil.png" onclick="myFunction()" width="36px" height="36px"></img>
+    <li class="nav-item" data-menuanchor="firstPage" class="active"><a href="#firstPage"><i class="fa fa-home fa-space icon"></i><span data-i18n="nav.home"></span></a></li>
+    <li class="nav-item" data-menuanchor="secondPage"><a href="#secondPage"><i class="fa fa-arrow-alt-circle-right fa-space icon"></i><span data-i18n="nav.intro"></span></a></li>
+    <li class="nav-item" data-menuanchor="3rdPage">   <a href="#3rdPage"><i class="fa fa-database fa-space icon"></i><span  data-i18n="nav.database"></span></a></li>
+    <li class="nav-item" data-menuanchor="4rdpage">   <a href="#4thpage"><i class="fa fa-desktop fa-space icon"></i><span data-i18n="nav.project"></span></a></li>
+    <li class="nav-item" data-menuanchor="5rdPage">   <a href="#5rdPage"><i class="fa fa-chart-line fa-space icon"></i>MER</a></li>
+    <li class="nav-item" data-menuanchor="6rdPage">   <a href="#6rdPage"><i class="fas fa-plug fa-space icon"></i>DER</a></li>
+    <li class="nav-item" data-menuanchor="7rdPage">   <a href="#7rdPage"><i class="fa fa-handshake fa-space icon"></i>DDL</a></li>
+    <li class="nav-item" data-menuanchor="8rdPage">   <a href="#8rdPage"><i class="fa fa-hand-paper fa-space icon"></i>DML</a></li>
+    <li class="nav-item" data-menuanchor="9rdPage">   <a href="#9rdPage"><i class="fas fa-paste  fa-space icon"></i>TCL</a></li>
+    <li class="nav-item" data-menuanchor="10rdPage">  <a href="#10rdPage"><i class="fa fa-not-equal fa-space icon"></i><span  data-i18n="nav.relational"></span></a></li>
+    <li class="nav-item" data-menuanchor="11rdPage">  <a href="#11rdPage"><i class="fa fa-superscript fa-space icon"></i><span>PLSQL</span></a></li>
+    <li class="nav-item" data-menuanchor="lastPage">  <a href="#lastPage"><i class="fa fa-hourglass-end fa-space icon"></i><span data-i18n="nav.activies"></span></a></li>
+</ul>
+</nav>
+
+<footer id="site-footer" class="page-footer">
+        <!-- Left content -->
+        <div class="footer-left">
+          <p>BY
+            <a href="https://github.com/weder96">
+              <span class="marked">WEDER</span>
+            </a>
+          </p>
+        </div>
+
+        <!-- Right content -->
+        <div class="footer-right">
+          <ul class="social">
+            <li>
+              <a href="">
+                <i class="fab fa-facebook icon"></i>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <i class="fab fa-twitter  icon"></i>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <i class="fab fa-linkedin  icon"></i>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <i class="fab fa-instagram  icon"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+
+<div id="fullpage">
+
+    <div class="section section_bg active" id="section1">
+            <div class="section-title text-center">
+                    <h5 class="title-bg">Conceito</h5>
+            </div>
+
+        <div class="slide" id="slide11">
+            <div class="intro">
+                <h3>1 - Conceito de Banco de Dados</h3>
+                <p>
+                        A IMPORTÂNCIA DA INFORMAÇÃO <br/>
+                        A informação é, para as empresas modernas, o principal recurso. É um insumo decisivo para as tarefas gerenciais.
+                        Uma vez que os gerentes precisam de informação de alta qualidade para administrar a mudança em ambiente global turbulento,                      <br/>
+                        muitas organizações estabeleceram sistemas de armazenagem e recuperação de dados – a matéria prima da informação. <br/>
+                        <br/><br/>
+                        <img src="imgs/bd.png" width="250px" height="250px"></img>
+                        <img src="imgs/nosql-logos.png" width="250px" height="250px"></img>
+                </p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide12">
+                <div class="intro">
+                    <h3>O conceito de banco de dados</h3>
+                    <p>Banco de dados seria então uma coleção de dados persistentes referentes a um tema específico. A função dessa coleção é atender às necessidades de informação de seus usuários, sendo elas a de uma simples consulta ou a de geração de informações ou conhecimento.</p>
+                </div>
+        </div>
+
+        <div class="slide" id="slide13">
+                <div class="intro">
+                    <h3>Sistemas de arquivos</h3>
+                    <h3>Banco de dados com modelo hierárquico</h3>
+                    <h3>Banco de dados com modelo de rede</h3>
+                    <h3>Banco de dados com modelo relacional</h3>
+                    <h3>Bancos de dados com modelo orientado a objetos</h3>
+                    <h3>Bancos de dados NOSQL</h3>
+                    <h3>Bancos de dados NewSQL</h3>
+                    <p>A utilização dos modelos apresentados foi possível por meio da utilização de sistemas que facilitassem o acesso aos dados e fossem capazes de manipular essas informações, implementando as regras de cada modelo. Cada um desses sistemas é chamado de Sistema de Gerenciamento de Banco de Dados (SGBD).</p>
+                </div>
+        </div>
+
+        <div class="slide" id="slide14">
+                <div class="intro">
+                    <h3>SISTEMAS GERENCIADORES DE BANCO DE DADOS</h3>
+                    <p>Os SGBDs são um conjunto de serviços de software responsáveis por evitar problemas tais como redundância de dados, dificuldade nos acessos, isolamento de dados, problemas de integridade, problemas de atomicidade ou problemas com acesso concorrente.
+                        Para que os dados e as estruturas do banco de dados sejam manipulados, os SGBDs apresentam linguagens específicas para essas tarefas sendo a Structured Query Language (SQL) a mais utilizada nos dias de hoje para os bancos de dados relacionais. Alguns SGBD suportam o uso da linguagem java.
+                        </p>
+                </div>
+        </div>
+
+        <div class="slide" id="slide15">
+            <div class="intro">
+                <h3>Linguagens de Bancos de dados</h3>
+                <p>As linguagens podem ser divididas em duas partes diferentes: a linguagem de manipulação de dados e a linguagem de definição de dados.<br/>
+                    A linguagem de manipulação de dados (DML) é a responsável por inserir, atualizar, excluir e recuperar os dados e as informações no banco de dados.<br/>
+                    A linguagem de definição de dados (DDL) é utilizada para criar, modificar ou excluir a parte estrutural do banco de dados, incluindo as consistências necessárias para inserção de dados, permissões de acesso e implementação do esquema criado pelo projetista. O esquema do banco de dados é apenas uma parte do projeto do banco de dados.
+
+                    </p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide16">
+            <div class="intro">
+                <h3>O Projeto de um Banco de dados</h3>
+                <p>Um projeto de banco de dados é composto de vários documentos que determinam projetos em diferentes níveis de visão.<br/>
+                   O primeiro modelo é baseado na visão descritiva do negócio, que é a mais próxima do mundo real.
+                   Esse documento busca trazer o maior número de informações e características para que as necessidades relatadas durante o levantamento
+                   sejam satisfeitas.<br/>
+                   O projeto de um banco de dados dependerá sempre da qualidade das informações resultantes da etapa de levantamento dos requisitos do sistema.</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide17">
+            <div class="intro">
+                <h3>MODELAGEM DE DADOS</h3>
+                <p>Qual o objetivo da modelagem de dados? <br/>
+                    Por que modelar os dados do ambiente de negócios?<br/>
+
+                    Representar os conceitos do ambiente de negócios observado<br/>
+                    Documentar e normalizar os dados no modelo de dados<br/>
+                    Fornecer processos de validação<br/>
+                    Observar fatos no ambiente de negócios e identificar relacionamentos entre os objetos do ambiente de negócios.<br/>
+                    Representar as regras de negócio que regulam os processos no ambiente de negócios</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide18">
+            <div class="intro">
+                <h3>Administração de Dados</h3>
+                <p>O objetivo principal da administração de dados é <b>planejar, documentar, modelar, gerenciar e integrar os recursos de informação</b> de uma empresa.<br/>
+                    Esta integração pode ser alcançada através de uma combinação de perfis refinados e técnicas apropriadas, uso apropriado das ferramentas de Administração de Dados tais como um repositório de metadados e produtos de modelagem de dados, típicamente ferramentas CASE.<br/>
+
+                    Duas abordagens são possíveis. Em ambos os casos, entretanto, os administradores de dados e os administradores de banco de dados cooperam estritamente no gerenciamento da organização dos dados:</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide19">
+                <div class="intro">
+                    <h3>BIBLIOGRAFIA COMPLEMENTAR</h3>
+                    <p>
+                    Modelagem de Dados, Peter Chen, Editora McGraw-Hill<br/>
+                    Banco de dados. São Paulo: Érica, 2004. Machado, Filipe Nery Rodrigues. Projeto de Banco de Dados: uma visão prática. Editora Érica. São Paulo. 2002<br/>
+                    Data Management : Banco de Dados e Organizações, Richard T. Watson, Editora LTC</p>
+                </div>
+            </div>
+
+    </div>
+
+
+
+    <div class="section section_bg" id="section2">
+            <div class="section-title text-center">
+                <h5 class="title-bg">INTRODUÇÃO</h5>
+            </div>
+        <div class="slide" id="slide21">
+            <div class="intro">
+                <h3>INTRODUÇÃO</h3>
+                <p>Imagine um banco que se esquece de quem lhe deve dinheiro ou uma revista que perdeu os nomes e os endereços dos seus assinantes.<br/>
+
+                        Em breve, estariam todos em grandes dificuldades, senão falidos.<br/>
+
+                        Por isso, houve a necessidade de criar mecanismos para gerenciar esses dados, desde pequenas massas até grandes.<br/>
+
+                        O gerenciamento de dados, exige habilidades em projeto, uso e gerenciamento dos sistemas de armazenamento de dados nas organizações modernas.<br/>
+
+                        Para isso, desenvolvem-se aplicações (sistemas) informatizados que acessam esses dados, para que sejam incluídos, alterados, excluídos ou pesquisados.</p>
+            </div>
+        </div>
+
+        <div class="slide active" id="slide22">
+          <div class="intro">
+            <h3>O QUE SÃO DADOS</h3>
+                <p>
+                        Dado é conjunto de símbolos “arranjados” a fim de representar a informação fora da mente humana. Um Elemento de Dado é o subconjunto de símbolos que compõem um dado. O dado em si não possui significado específico, não transmite conhecimento.<br/>
+
+                        Exemplo :<br/>
+
+                        O número de alunos matriculados na disciplina MATEMÁTICA no primeiro semestre de 2008 é igual a 57.<br/>
+
+                        Quais são os elementos de dados??<br/>
+
+                        Disciplina : MATEMÁTICA<br/>
+
+                        Período : primeiro semestre de 2008<br/>
+
+                        Matriculados : 57<br/>
+
+                        Em conjunto, estes elementos nos fornece um dado porém sem significado pois não sabemos o que significa termos 57 alunos matriculados no primeiro semestre de 2008? Houve aumento do número de alunos? Houve evasão de alunos do curso naquele semestre? Qual o significado destes números?.
+                </p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide23">
+            <div class="intro">
+             <h3> O QUE É INFORMAÇÃO</h3>
+             <p>A informação pode ser entendida com o dado com significado, passível de interpretação e de entendimento por parte de quem o usa, enfim, é o dado capaz de transmitir conhecimento para a ação ou para a tomada de decisão.</p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide24">
+                <div class="intro">
+                 <h3>AS CARACTERÍSTICAS DOS DADOS</h3>
+                 <p>
+                        Uma vez que percebemos a importância crítica dos dados para as empresas, podemos identificar algumas características desejáveis para esses dados:<br/>
+                        <b>Compartilhamento</b> : Os dados devem poder ser compartilhados pelos diversos interessados, usuarios, departamentos e sistemas de informação<br/>
+                        <b>Disponibilidade</b> : Os dados devem estar disponíveis para quem estiver interessado, seja para uma simples consulta ou relatório ou para uma análise detalhada feita por um tomador de decisão.<br/>
+                        <b>Segurança</b> : Os dados precisam estar seguros, protegidos contra destruição, alteracao ou uso nãoautorizado.<br/>
+                        <b>Precisão</b> : Os dados devem ser absolutamente confiáveis. Não deve haver dúvida quanto à precisão e veracidade dos dados armazenados<br/>
+                        <b>Atualizados</b> : Os dados devem estar atualizados para que seja possível aà empresa aproveitar as oportunidades de negócio que possam surgir no mercado                    <br/>
+                 </p>
+                </div>
+            </div>
+    </div>
+
+    <div class="section section_bg" id="section3">
+            <div class="section-title text-center">
+                    <h5 class="title-bg">DATABASE</h5>
+                </div>
+            <div class="slide" id="slide31">
+                <div class="intro">
+                    <h3>CONCEITO DE BANCO DE DADOS</h3>
+                    <p>
+                            Banco de dados, (ou base de dados), é o conjunto de dados organizados de forma que façam sentido para o negocio. De forma que possam gerar informação.<br/>
+                            Um banco de dados normalmente agrupa informações utilizadas para um mesmo tema.<br/> <b> Exemplo: Contabilidade, Pedidos, Cotação de Ações, Seguros, Vendas, Plano de Saúde, etc.</b>
+                            O objetivo principal de um sistema de banco de dados é possibilitar um ambiente que seja adequado e eficiente para uso na recuperação e armazenamento de informações.<br/>
+                        <h3>Por exemplo: Um banco de dados de uma escola, teremos como informação:</h3>
+                            <ul class="listItens">
+                                <li>Os dados pessoais do aluno</li>
+                                <li>Os cursos oferecidos ou anos (antiga série)</li>
+                                <li> As turmas</li>
+                                <li> As disciplinas</li>
+                                <li>As notas</li>
+                                <li>Os professores</li>
+                            </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div class="slide" id="slide32">
+                    <div class="intro">
+                        <h3>01 -SISTEMA GERENCIADOR DE BANCO DE DADOS ( SGBD )</h3>
+                        <p>
+                         É o conjunto de programas de computador, software, usado para a criação, administração e gerenciamento de um Banco de Dados. É responsável pelo gerenciamento de um Banco de Dados. Possui recursos e ferramentas para ajudar a gerenciar o acesso, a manipulação e a organização dos dados o que antes era feito pelos sistemas de informação. Existem diversos sistemas gerenciadores de banco de dados disponíveis no mercado, que atendem todos os tipos de bancos de dados ( hierárquico, rede, relacional e orientado à objetos ) e de todos os tamanhos desde bancos de dados desktop até bancos de dados corporativos. Um sistema gerenciador de banco de dados é projetado para ser a interface entre o banco de dados e os usuários e sistemas de informação que consulta e atualizam informações, servindo como uma interface. Para isso todo sistema gerenciador de banco de dados possui uma interface para permitir a comunicação com diversas aplicações que vão desde ferramentas de consulta do usuário final, componentes de sistemas de informação e web services.
+
+                        </p>
+                    </div>
+            </div>
+
+            <div class="slide" id="slide33">
+                    <div class="intro">
+                        <h3>02 -SISTEMA GERENCIADOR DE BANCO DE DADOS ( SGBD )</h3>
+                        <p>
+                            Um sistema gerenciador de banco de dados possui três componentes:<br/>
+                            Linguagem de definição de dados <b>(DDL do inglês Data Definition Language )</b> que especifica a estrutura dos objetos da base de dados e define os elementos de dados;<br/>
+                            Linguagem de manipulação de dados <b>(DML do inglês Data Manipulation Language ) </b>que oferece comandos para consulta e atualização de dados na base;<br/>
+                            Linguagem de Controle de Acesso aos Dados <b>( DCL do inglês Data Control Language )</b> que estabelece controle de acesso aos objetos do banco de dados e define os usuários e perfil de cada usuário do banco de dados. <br/>
+                        </p>
+                    </div>
+            </div>
+
+
+            <div class="slide" id="slide34">
+                <div class="intro">
+                    <h3>03 -SISTEMA GERENCIADOR DE BANCO DE DADOS ( SGBD )</h3>
+                    <h4> Características de um  Sistema Gerenciador de Banco de Dados</h4>
+                    <p>
+                        <b>Independência de Dados</b> - A definição dos dados está é mantida pelo SGBD e não pelas aplicações que acessam o banco de dados;<br/>
+                        <b>Restrições de Integridade</b> - A definição de mecanismos para garantir a integridade dos dados armazenados;<br/>
+                        <b>Segurança/Privacidade</b> - Todo o acesso ao banco de dados é controlado pelo SGBD que possui mecanismos para autenticação dos usuários e controle de acesso aos objetos do banco de dados;<br/>
+                        <b>Restauração e Backup</b> - Possui utilitários para restauração e backup dos dados de forma automática, através de agendamento ou via comando pelo DBA;<br/>
+                        <b>Reorganização de Dados</b> - Possui recursos para reorganizar a estrutura, distribuição e particionamento dos dados do banco de dados;<br/>
+                        <b>Linguagem Não Procedural</b> - Possui uma linguagem não procedural para operações de DML, DDL e DCL. O SQL é o padrão deste tipo de linguagem para bancos de dados relacionais;<br/>
+                        <b>Recuperação de Dados</b> - Possui recursos para recuperação do estado do banco de dados a partir de um log de transações mantido pelo SGBD.<br/>
+                    </p>
+                </div>
+            </div>
+
+            <div class="slide" id="slide35">
+                <div class="intro">
+                    <h3>Principais Objetos de um Sistema Gerenciador de Banco de Dados</h3>
+                    <p>
+                        Esquema<br/>
+                        Tabelas<br/>
+                        Visões<br/>
+                        Índices<br/>
+                        Usuários e Papéis<br/>
+                        Procedimentos Armazenados ( Stored Procedures, Functions e Triggers )<br/>
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="slide" id="slide36">
+                <div class="intro">
+                    <h3>ESTRUTURA DE UM BANCO DE DADOS</h3>
+                    <p>
+                        Esquema<br/>
+                        Tabelas<br/>
+                        Visões<br/>
+                        Índices<br/>
+                        Usuários e Papéis<br/>
+                        Procedimentos Armazenados ( Stored Procedures, Functions e Triggers )<br/>
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="slide" id="slide37">
+                <div class="intro">
+                    <h3>Tabelas (ou entidades ou relação)</h3>
+                    <p>
+                        Nos modelos de base de dados relacionais, uma tabela é um conjunto de dados com um número determinado de colunas (ou campos) e um número infinito de linhas (ou registros ou tuplas).<br/>
+                        Um banco de dados é composto de uma ou mais tabelas (podemos chamar também de entidades),<br/>
+                        que uma forma comum de armazenagem de dados na empresa. O correto é que, através de um processo de modelagem de dados bem feito, todos os dados necessários ao negócio fiquem organizados nestas tabelas. A criação de cada tabela de um banco de dados, deverá ser feita com coerência e verificando o “assunto” que cada tabela irá armazenar. <br/>
+                        Cada tabela deve armazenar dados relacionados com apenas um assunto ou conceito do negócio.<br/>
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="slide" id="slide38">
+                <div class="intro">
+                    <h3>Colunas (ou atributos)</h3>
+                    <p>
+                        Cada tabela possui colunas (ou podemos chamar campos), que são os nomes dos dados que serão armazenados. <br/>
+                        Cada coluna representa uma informação ou atributo da linha.<br/>
+                        Cada campo (ou atributo) possuem propriedades, como por exemplo o tipo de dados a ser <br/>
+                        armazenado <b>(caracter, numérico, data)</b>, se é de preenchimento obrigatório e o tamanho.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="slide" id="slide39">
+                <div class="intro">
+                    <h3>Linhas (ou tuplas ou ocorrência de entidade)</h3>
+                    <p>
+                        As tabelas (ou entidades) também possuem linhas (ou tuplas) que são os registros contendo dados que estão armazenados em cada campo da tabela.
+                        Então podemos dizer que tabela (ou entidade) é:<br/>
+                        – Um objeto criado para armazenar os dados fisicamente<br/>
+                        – Os dados são armazenados em linhas (tuplas) e colunas (atributos)<br/>
+                        – Os dados de uma tabela normalmente descrevem um único assunto tal como <br/>
+                        <b>clientes, vendas, produtos, curso, aluno, disciplina, bilhete, filme, cinema, sessão, viagem, hotel, voo, etc.</b>
+                    </p>
+                </div>
+            </div>
+
+
+
+
+
+    </div>
+
+
+    <div class="section section_bg" id="section4">
+            <div class="section-title text-center">
+                    <h5 class="title-bg">PROJETO</h5>
+            </div>
+            <div class="slide" id="slide41">
+                    <div class="intro">
+                        <h3>Projeto de Banco de Dados</h3>
+                        <p>
+                            Um projeto de banco de dados é caracterizado por um processo que possui fases distintas e com aspectos
+                            diferentes mas que tem como objetivo final a implementação de um banco de dados que atenda as necessidades
+                            de informação do usuário e aos requisitos não funcionais de disponibilidade, desempenho e confiabilidade esperados.<br/>
+                            As Três fases que fazem parte de um projeto de banco de dados:<br/>
+                            <b>1 - Modelo conceitual</b><br/>
+                            <b>2 - Modelo Lógico</b><br/>
+                            <b>3 - Modelo Físico</b><br/>
+                        </p>
+                    </div>
+            </div>
+
+            <div class="slide" id="slide42">
+                    <div class="intro">
+                        <h3>1 - Modelo conceitual</h3>
+                        <p>
+                                  Representa os conceitos do negócio e as associações existentes entre estes conceitos. Também são representados os atributos assim como as regras de negócio que regulam as associações e conceitos do negócio. Este modelo é independente da tecnologia de implementação usada para o banco de dados e por isto é a etapa mais adequada para o envolvimento do usuário que não precisa ter conhecimentos técnicos.
+                                  As características principais deste modelo são :<br/>
+                                <b>· Visão Geral do negócio <b/></b><br/>
+                                <b>· Facilidade de entendimento entre usuários e desenvolvedores <b/>  <br/>
+                                <b>· Possui somente as entidades, relacionamentos e atributos principais <b/>  <br/>
+
+
+                                Os principais produtos da fase de projeto conceitual são: <br/>
+                                <b>O diagrama de entidade e relacionamentos, também conhecido por modelo de entidade relacionamentos; <b/><br/>
+                                <b>Lista de Regras de Restrição de Integridade. <b/>
+                        </p>
+                    </div>
+            </div>
+
+            <div class="slide" id="slide43">
+                    <div class="intro">
+                        <h3>2- Modelo Lógico </h3>
+                        <p>
+                                Representa as estruturas de dados a serem implementadas e suas características considerando os limites impostos pelo modelo de dados usado para implementação do banco de dados. (banco de dados hierárquico , banco de dados de rede, banco de dados relacional ,etc.). As características principais deste modelo são:<br/>
+                                <b>· É derivado do modelo conceitual </b>  <br/>
+                                <b>· Possui entidades associativas em lugar de relacionamentos n:m </b>       <br/>
+                                <b>· Define as chaves primárias das entidades  </b>                               <br/>
+                                <b>· Define as chaves estrangeiras entre as entidades </b>                             <br/>
+                                <b>· Normalização até a 3a. forma normal </b>                               <br/>
+                                <b>· Adequado ao padrão de nomenclatura adotado pela empresa </b>                 <br/>
+                                <b>· As Entidades e atributos são documentados em um Dicionário de Dados </b>          <br/>
+
+                                O principal produto da fase de projeto lógico é o modelo relacional.
+                        </p>
+                    </div>
+            </div>
+
+            <div class="slide" id="slide44">
+                    <div class="intro">
+                        <h3> 3- Modelo Físico </h3>
+                        <p>
+                                Este modelo representa a implementação do modelo lógico considerando algum tipo particular de tecnologia de banco de dados e os requisitos não funcionais ( desempenho, disponibilidade, segurança) que foram identificados pelo analista de requisitos. As características principais deste modelo são :<br/>
+                                <b>· Elaborado a partir do modelo lógico</b>                            <br/>
+                                <b>· Pode variar segundo a tecnologia usada para implementação do banco de dados</b>                            <br/>
+                                <b>· Possui tabelas físicas (log , lider , etc.)</b><br/>
+                                <b>· Possui colunas físicas (replicação)</b><br/>
+
+                            No modelo físico, a linguagem SQL <b>(Structured Query Language)</b>, é a linguagem padrão para definição,
+                            manipulação e controle de uso das estruturas de dados.<br/>
+                            Existem muitos Sistemas Gerenciadores de Banco de Dados disponíveis no mercado. Como exemplo,
+                            podemos citar o <b>PostgreSQL e o MySQL</b>, que tem código aberto e são gratuitos.
+                            Também existe o <b>Oracle, DB2, Sybase SQL Server, Informix e Microsoft SQL Server<b/>, que são pagos e não possuem código aberto, sendo bastante usados em corporações.<br/>
+                        </p>
+                    </div>
+            </div>
+
+            <div class="slide" id="slide45">
+                    <div class="intro">
+                        <h3>Sistemas de Gerenciamento de Bancos de Dados - SGBDs</h3>
+                        <p>
+
+                                Como vimos na aula passada, o SGBD é um software responsável pelo armazenamento e gerenciamento de grandes volumes de dados estruturados de acordo com o modelo de dados implementado pelo SGBD e com recursos para acesso e atualização das informações.
+                                <br/>
+                                <b><i>Vantagens:</i></b><br/>
+                                    <i>Rapidez na manipulação e no acesso à informação;<br/>
+                                    Redução do esforço humano (desenvolvimento e utilização);<br/>
+                                    Disponibilização da informação no tempo necessário;<br/>
+                                    Distribuição de informações geograficamente;<br/>
+                                    Controle de redundância e de inconsistência de informações;<br/>
+                                    Compartilhamento de dados;<br/>
+                                    Aplicação automática de restrições de integridade;<br/>
+                                    Controle de acesso e segurança dos dados;<br/>
+                                    Redução de problemas de integridade.<br/></i>
+
+                        </p>
+                    </div>
+            </div>
+
+
+            <div class="slide" id="slide46">
+                    <div class="intro">
+                        <h3>DICIONÁRIO DE DADOS</h3>
+                        <p>   <b>Definição:</b><br/>
+                                Um dicionário de dados é um documento que descreve as informações representadas no modelo de dados, descrevendo informações de suas entidades e seus atributos ( tamanho, tipos de dado, obrigatoriedade e definição ). <br/><br/>
+                                Quando uma organização constrói um dicionário de dados de dimensão empresarial, o intuito deve ser o de padronizar precisamente definições semânticas a serem adotadas na empresa toda; portanto, ele deve incluir tanto definições semânticas como de representação para elementos de dados, sendo que os componentes semânticos focam na criação precisa do significado dos elementos de dados, e de outro lado, as definições de representação indicam como os elementos de dados são armazenados em uma estrutura de computador de acordo com seu tipo, ou seja, se são dados do tipo inteiro, caracter ou formato de data.
+                        </p>
+                    </div>
+            </div>
+            <div class="slide" id="slide47">
+                    <div class="intro">
+                        <h3>DICIONÁRIO DE DADOS - MODELO</h3>
+                        <p>
+                        <img src="imgs/dicionary.jpeg" width="800px" height="500px"></img>
+                        </p>
+                    </div>
+            </div>
+
+            <div class="slide" id="slide48">
+                    <div class="intro">
+                        <h3>Tipos de Dados:</h3>
+                        <p>
+                                Os dados podem assumir vários tipos de dados, que irão variar dependendo do Sistema de Gerenciamento de Banco de dados que estiver em uso pela empresa: Abaixo seguem alguns tipos: <br/>
+                                <b>char:</b> Caracter (string de valor fixo): O valor armazenado é uma string.                                 <br/>
+                                <b>Varchar:</b> Caracter (string de valor variável): O valor armazenado é uma string.                                <br/>
+                                <b>integer:</b> Número inteiro é o tipo padrão e o tamanho do conjunto que pode ser representado.                          <br/>
+                                <b>float:</b> Número em ponto flutuante de precisão simples. São conhecidos normalmente como                                 <br/>
+                                <br/>
+                                <b><i>Números reais.</i></b> <br/>
+                                <b>double:</b> Número em ponto flutuante de precisão dupla                                 <br/>
+                                <b>· Date:</b> Tipo data <br/>
+                        </p>
+                    </div>
+            </div>
+
+            <div class="slide" id="slide49">
+                    <div class="intro">
+                        <h3>EXEMPLO DE UM PROJETO DE BANCO DE DADOS</h3>
+                        <p>
+                         Para que um projeto de banco de dados seja bem sucedido, são necessárias diversas etapas.<br/>
+                         Etapas no projeto de um Banco de dados:<br/>
+                         <i>
+                         - Determinar qual o objetivo do projeto de Banco de Dados:<br/>
+                         - Determinar as Entidades necessárias: <br/>
+                         - Determinar os Atributos de cada Entidade:<br/>
+                         - Determinar o identificador de cada Entidade<br/>
+                         - Determinar os Relacionamentos: <br/>
+                         - Normalizar a Estrutura do Banco de Dados:<br/>
+                         </i>
+                        </p>
+                    </div>
+            </div>
+
+            <div class="slide" id="slide410">
+                    <div class="intro">
+                        <h3>As formas normais</h3>
+                        <p>
+                          O Processo de normalização aplica uma série de regras sobre as tabelas de um banco de dados, para verificar se estas estão corretamente projetadas. Embora existam cinco formas normais (ou regras de normalização),
+                          na prática usamos um conjunto de três Formas Normais.
+                          <br/>
+                         Vejamos as três primeiras formas normais do processo de normalização de dados.<br/>
+
+                             <b>Primeira Forma Normal (1FN)</b> <br/>
+                             <b>Segunda Forma Normal (2FN)</b> <br/>
+                             <b>Terceira Forma Normal (3FN)</b> <br/>
+
+                             Apesar de existir outras formas normais como a quarta forma normal e quinta forma normal, apenas as três primeiras tem sido considerada atualmente. As formas normais são importantes instrumentos para resolver antecipadamente problemas na estrutura do banco de dados.
+
+                        </p>
+                    </div>
+            </div>
+
+            <div class="slide" id="slide411">
+                    <div class="intro">
+                        <h3>Primeira Forma Normal (1FN)</h3>
+                        <p>
+                          Esta regra define as regras de organização básica de um banco de dados, que são:
+                              Eliminar as colunas duplicadas de uma mesma tabela;
+                              Criar tabelas separadas para cada grupo de dados relacionados e identificar cada linha com uma ou mais colunas como únicas (IDs, Códigos, etc). Ou seja, todos os atributos da relação estiverem baseados em um domínio simples, não contendo grupos ou valores repetidos;
+                          Em resumo, esta 1FN faz com que cada atributo (coluna) tenha uma relação atômica (trabalhar de forma indivisível), ou seja, cada coluna deve ter apenas um valor e cada registro tenha as mesmas colunas.
+                        </p>
+                    </div>
+            </div>
+
+            <div class="slide" id="slide412">
+                    <div class="intro">
+                        <h3>Primeira Forma Normal (1FN)</h3>
+                        <p>
+                          <img src="imgs/fn01.png" width="800px" height="500px"></img>
+                        </p>
+                    </div>
+            </div>
+
+            <div class="slide" id="slide413">
+                    <div class="intro">
+                        <h3>Segunda Forma Normal (2FN)</h3>
+                        <p>
+                          Nesta forma, são definidas as regras para remover dados duplicados:
+                              Estar na 1FN;
+                              Cada atributo não-chave for dependente da chave primária inteira, isto é, cada atributo não-chave não poderá ser dependente de apenas parte da chave. Ou seja, todos os seus atributos que não façam parte de alguma chave candidata devem ser determinados unicamente por qualquer chave candidata da tabela;
+                        </p>
+                    </div>
+            </div>
+
+            <div class="slide" id="slide414">
+                    <div class="intro">
+                        <h3>Segunda Forma Normal (2FN)</h3>
+                        <p>
+                          <img src="imgs/fn02.png" width="800px" height="500px"></img>
+                        </p>
+                    </div>
+            </div>
+
+            <div class="slide" id="slide415">
+                    <div class="intro">
+                        <h3>Terceira Forma Normal (3FN)</h3>
+                        <p>
+                          Normalmente, quando alguns desenvolvedores ou arquitetos de BD normalizam seu banco, chegam até esta forma e para por aqui mesmo. Neste passo, iremos um pouco mais a fundo:
+                              Estar na 2FN;
+                              Eliminar as colunas que não possuem dependência funcional com as chaves primárias. todos os atributos que não são chave sejam mutuamente independentes, isto é, que não existam funções que definam um ao outro. Portanto, sempre a chave por inteiro deve definir toda a tabela;
+                        </p>
+                    </div>
+            </div>
+
+            <div class="slide" id="slide416">
+                    <div class="intro">
+                        <h3>Terceira Forma Normal (3FN)</h3>
+                        <p>
+                          <img src="imgs/fn03.png" width="800px" height="500px"></img>
+                        </p>
+                    </div>
+            </div>
+
+            <div class="slide" id="slide417">
+                    <div class="intro">
+                        <h3>Quarta e Quinta Forma Normal (4FN e 5FN)</h3>
+                        <p>
+                          <img src="imgs/fn04e05.png" width="800px" height="500px"></img>
+                        </p>
+                    </div>
+            </div>
+
+
+
+
+    </div>
+
+
+  <div class="section section_bg" id="section5">
+        <div class="section-title text-center">
+                <h5 class="title-bg">MER</h5>
+        </div>
+        <div class="slide" id="slide51">
+                <div class="intro">
+                    <h3>MER - Modelo Entidade e Relacionamentos</h3>
+                    <p>
+                       Start -> levantamento dos requisitos necessários <br/>
+                       Durante essa análise, identifica-se as principais partes e objetos envolvidos, suas possíveis ações e responsabilidades, suas características e como elas interagem entre si.<br/>
+                       A partir das informações obtidas, pode-se desenvolver um modelo conceitual que será utilizado para orientar o desenvolvimento propriamente dito, fornecendo informações sobre os aspectos relacionados ao domínio do projeto em questão.<br/>
+                       <b>O Modelo Entidade Relacionamento (também chamado Modelo ER, ou simplesmente MER)</b>,
+                       como o nome sugere, é um modelo conceitual utilizado na Engenharia de Software para descrever os objetos (entidades) envolvidos em um domínio de negócios, com suas características (atributos) e como elas se relacionam entre si (relacionamentos).
+                    </p>
+                </div>
+        </div>
+
+        <div class="slide" id="slide52">
+                <div class="intro">
+                    <h3>MER - Modelo Entidade e Relacionamentos</h3>
+                    <p>
+                      Observação:
+                      nem sempre criaremos modelos para um sistema completo, pois isso poderia resultar em um modelo muito extenso e difícil de interpretar.
+                    </p>
+                </div>
+        </div>
+
+        <div class="slide" id="slide53">
+                <div class="intro">
+                    <h3>MER - Entidades</h3>
+                    <p>
+                      Os objetos ou partes envolvidas um domínio, também chamados de entidades, podem ser classificados como físicos ou lógicos, de acordo sua existência no mundo real. Entidades físicas: são aquelas realmente tangíveis, existentes e visíveis no mundo real, como um cliente (uma pessoa, uma empresa) ou um produto (um carro, um computador, uma roupa). Já as entidades lógicas são aquelas que existem geralmente em decorrência da interação entre ou com entidades físicas, que fazem sentido dentro de um certo domínio de negócios, mas que no mundo externo/real não são objetos físicos (que ocupam lugar no espaço). São exemplos disso uma venda ou uma classificação de um objeto (modelo, espécie, função de um usuário do sistema).
+                    </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide54">
+                <div class="intro">
+                    <h3>MER - Entidades</h3>
+                    <p>
+                      As entidades são nomeadas com substantivos concretos ou abstratos que representem de forma clara sua função dentro do domínio. Exemplos práticos de entidades comuns em vários sistemas são Cliente, Produto, Venda, Turma, Função, entre outros.
+                      Podemos classificar as entidades segundo o motivo de sua existência:
+                    </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide55">
+                <div class="intro">
+                    <h3>MER -> Entidades -> Entidades fortes</h3>
+                    <p>
+                      Entidades Fortes: <br/> são aquelas cuja existência independe de outras entidades, ou seja, por si só elas já possuem total sentido de existir. Em um sistema de vendas, a entidade produto, por exemplo, independe de quaisquer outras para existir.
+                    </p>
+                </div>
+        </div>
+
+        <div class="slide" id="slide56">
+                <div class="intro">
+                    <h3>MER -> Entidades -> Entidades Fracas</h3>
+                    <p>
+                      Entidades Fracas: <br/> ao contrário das entidades fortes, as fracas são aquelas que dependem de outras entidades para existirem, pois individualmente elas não fazem sentido. Mantendo o mesmo exemplo, a entidade venda depende da entidade produto, pois uma venda sem itens não tem sentido.
+                    </p>
+                </div>
+        </div>
+
+        <div class="slide" id="slide57">
+                <div class="intro">
+                    <h3>MER -> Entidades -> Associativas</h3>
+                    <p>
+                      Entidades Associativas: <br/> esse tipo de entidade surge quando há a necessidade de associar uma entidade a um relacionamento existente. Na modelagem Entidade-Relacionamento não é possível que um relacionamento seja associado a uma entidade, então tornamos esse relacionamento uma entidade associativa
+                    </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide58">
+                <div class="intro">
+                    <h3>MER -> Relacionamentos</h3>
+                    <p>
+                      Uma vez que as entidades são identificadas, deve-se então definir como se dá o relacionamento entre elas. De acordo com a quantidade de objetos envolvidos em cada lado do relacionamento, podemos classifica-los de três formas:
+                    </p>
+                </div>
+        </div>
+
+
+
+        <div class="slide" id="slide59">
+                <div class="intro">
+                    <h3>MER -> Relacionamento 1..1 (um para um)</h3>
+                    <p>
+                      Relacionamento 1..1 (um para um): cada uma das duas entidades envolvidas referenciam obrigatoriamente apenas uma unidade da outra. Por exemplo, em um banco de dados de currículos, cada usuário cadastrado pode possuir apenas um currículo na base, ao mesmo tempo em que cada currículo só pertence a um único usuário cadastrado.
+                    </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide510">
+                <div class="intro">
+                    <h3>MER -> Relacionamento 1..n ou 1..* (um para muitos)</h3>
+                    <p>
+                      Relacionamento 1..n ou 1..* (um para muitos): uma das entidades envolvidas pode referenciar várias unidades da outra, porém, do outro lado cada uma das várias unidades referenciadas só pode estar ligada uma unidade da outra entidade. Por exemplo, em um sistema de plano de saúde, um usuário pode ter vários dependentes, mas cada dependente só pode estar ligado a um usuário principal. Note que temos apenas duas entidades envolvidas: usuário e dependente. O que muda é a quantidade de unidades/exemplares envolvidas de cada lado.
+                    </p>
+                </div>
+        </div>
+
+        <div class="slide" id="slide511">
+                <div class="intro">
+                    <h3>MER -> Relacionamento n..n ou *..* (muitos para muitos)</h3>
+                    <p>
+                      Relacionamento n..n ou *..* (muitos para muitos): neste tipo de relacionamento cada entidade, de ambos os lados, podem referenciar múltiplas unidades da outra. Por exemplo, em um sistema de biblioteca, um título pode ser escrito por vários autores, ao mesmo tempo em que um autor pode escrever vários títulos. Assim, um objeto do tipo autor pode referenciar múltiplos objetos do tipo título, e vice versa.
+                    </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide5112">
+                <div class="intro">
+                    <h3>MER -> Auto-Relacionamentos</h3>
+                    <p>
+                            Um outro exemplo que podemos representar seria o de uma entidade PESSOA que possui PAI. Ora o pai de uma pessoae a própria pessoa são ocorrencias da mesma entidade PESSOA, portanto temos um relacionamento entre ocorrencias da mesma entidade PESSOA que seriam as ocorrencias da pessoa, do pai. A representação desta situação seria feita da seguinte forma:. <br/>
+                            <img src="imgs/autorel02.jpg" width="300px" height="300px">
+                            <br/>
+                            Observe que a cardinalidade do auto-relacionamento indica opcionalidade visto que a PESSOA pode nao ter pai conhecido ou ter somente um pai.
+                            Os auto-relacionamentos podem possuir qualquer tipo de cardinalidade. 
+
+                    </p>
+                </div>
+        </div>
+
+        <div class="slide" id="slide5113">
+                <div class="intro">
+                    <h3>MER -> Auto-Relacionamentos</h3>
+                    <p>
+                            É importante observar que nessa caso a forma de representação é a mesma pois se trata da entidade PRODUTO que mantem um relacionamento COMPOSIÇÂO com ela mesma, sendo que a única alteração é com respeito à cardinalidade deste relacionamento que é muitos para muitos. <br/>
+                            Segue abaixo exemplo de como seria representado este auto-relacionamento. <br/>
+                            Os auto-relacionamentos são muito usados para representar hierarquias e composições de elementos do mundo real que são ocorrencias em uma mesma entidade.  <br/>
+                            A forma de representação é simples sendo que devemos ter especial atenção a cardinalidade do auto-relacionamento.. <br/>
+                            <img src="imgs/autorel03.jpg" width="300px" height="300px">
+
+                    </p>
+                </div>
+        </div>
+
+        <div class="slide" id="slide512">
+                <div class="intro">
+                    <h3>MER -> Relacionamento -> Observação </h3>
+                    <p>
+                      Os relacionamentos em geral são nomeados com verbos ou expressões que representam a forma como as entidades interagem, ou a ação que uma exerce sobre a outra. Essa nomenclatura pode variar de acordo com a direção em que se lê o relacionamento. Por exemplo: um autor escreve vários livros, enquanto um livro é escrito por vários autores.
+                    </p>
+                </div>
+        </div>
+
+        <div class="slide" id="slide513">
+                <div class="intro">
+                    <h3>MER -> Atributos </h3>
+                    <p>
+                      Atributos são as características que descrevem cada entidade dentro do domínio. Por exemplo, um cliente possui nome, endereço e telefone. Durante a análise de requisitos, são identificados os atributos relevantes de cada entidade naquele contexto, de forma a manter o modelo o mais simples possível e consequentemente armazenar apenas as informações que serão úteis futuramente. Uma pessoa possui atributos pessoais como cor dos olhos, altura e peso, mas para um sistema que funcionará em um supermercado, por exemplo, estas informações dificilmente serão relevantes.
+                      Os atributos podem ser classificados quanto à sua função da seguinte forma:
+                    </p>
+                </div>
+        </div>
+
+        <div class="slide" id="slide514">
+                <div class="intro">
+                    <h3>MER -> Atributos -> classificão </h3>
+                    <p>
+                      <b>Descritivos:</b> representam característica intrínsecas de uma entidade, tais como nome ou cor.<br/>
+                      <b>Nominativos:</b> além de serem também descritivos, estes têm a função de definir e identificar um objeto. Nome, código, número são exemplos de atributos nominativos.<br/>
+                      <b>Referenciais:</b> representam a ligação de uma entidade com outra em um relacionamento. Por exemplo, uma venda possui o CPF do cliente, que a relaciona com a entidade cliente.<br/>
+
+                  Quanto à sua estrutura, podemos ainda classificá-los como:<br/>
+
+                      <b>Simples:</b> um único atributo define uma característica da entidade. Exemplos: nome, peso.<br/>
+                      <b>Compostos:</b> para definir uma informação da entidade, são usados vários atributos. <br/>
+                      Por exemplo, o endereço pode ser composto por rua, número, bairro, etc.
+
+                    </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide515">
+                <div class="intro">
+                    <h3>MER -> Chave Primária </h3>
+                    <p>
+                      Alguns atributos representam valores únicos que identificam a entidade dentro do domínio e não podem se repetir. <br/>
+                      Em um cadastro de clientes, por exemplo, esse atributo poderia ser o CPF. A estes chamamos de Chave Primária.
+                    </p>
+                </div>
+        </div>
+
+
+
+        <div class="slide" id="slide516">
+                <div class="intro">
+                    <h3>MER -> Chave Estrangeira </h3>
+                    <p>
+                      Já os atributos referenciais são chamados de Chave Estrangeira e geralmente estão ligados à chave primária da outra entidade. Estes termos são bastante comuns no contexto de bancos de dados. Mantendo o exemplo anterior, a entidade cliente tem como chave primária seu CPF, assim, a venda possui também um campo “CPF do cliente” que se relaciona com o campo CPF da entidade cliente.
+                    </p>
+                </div>
+        </div>
+
+
+
+  </div>
+
+
+  <div class="section section_bg" id="section6">
+        <div class="section-title text-center">
+             <h5 class="title-bg">DER</h5>
+        </div>
+
+        <div class="slide" id="slide61">
+            <div class="intro">
+                <h3>DER -> Diagrama Entidade Relacionamento </h3>
+                <p>                    
+                    Enquanto o MER é um modelo conceitual, o Diagrama Entidade Relacionamento (Diagrama ER ou ainda DER) é a sua representação gráfica e principal ferramenta. Em situações práticas, o diagrama é tido muitas vezes como sinônimo de modelo, uma vez que sem uma forma de visualizar as informações, o modelo pode ficar abstrato demais para auxiliar no desenvolvimento do sistema. Dessa forma, quando se está modelando um domínio, o mais comum é já criar sua representação gráfica, seguindo algumas regras.
+                </p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide62">
+            <div class="intro">
+                <h3>DER -> Notação Original </h3>
+                <p>
+                    Em sua notação original, proposta por Peter Chen (idealizador do modelo e do diagrama), as entidades deveriam ser representadas por retângulos, seus atributos por elipses e os relacionamentos por losangos, ligados às entidades por linhas, contendo também sua cardinalidade (1..1, 1..n ou n..n)
+                </p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide63">
+                <div class="intro">
+                    <h3>DER -> Diagrama Entidade Relacionamento </h3>
+                    <p>
+                        Exemplo simples de um diagrama para um sistema de imobiliárias.<br/>
+                        <img src="imgs/der01.png" width="800px" height="500px"></img>                 
+                    </p>
+                </div>
+        </div>
+
+        <div class="slide" id="slide64">
+                <div class="intro">
+                    <h3>DER -> Cardinalidade </h3>
+                    <p>
+                        <img src="imgs/der02.jpg" width="800px" height="500px"></img>                 
+                    </p>
+                </div>
+        </div>
+
+        <div class="slide" id="slide65">
+                <div class="intro">
+                    <h3>DER -> Cardinalidade de uma forma mais completa </h3>
+                    <p>
+                        <img src="imgs/der03.jpg" width="850px" height="300px"></img>                 
+                    </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide66">
+                <div class="intro">
+                    <h3>DER -> Diagrama Entidade Relacionamento </h3>
+                    <p>
+                            No diagrama anterior, lemos os relacionamentos da seguinte forma:<br/>
+                            1 ou 1 grupo possui 0 ou muitos produtos. Como de um lado temos “1 ou 1”, isso equivale a apenas “1”, pois não temos várias possibilidades. Já do lado do produto, indicamos que um grupo pode possuir nenhum produto, mas também pode possuir vários.
+                            0 ou várias vendas contém 1 ou muitos produtos. Ou seja, um produto pode nunca ser vendido (0 vendas) como também pode ser vendido várias vezes (n vendas). Já uma venda deve conter 1 ou vários produtos, pois uma venda não pode estar vazia (0 produtos)                   
+                    </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide67">
+                <div class="intro">
+                    <h3>DER -> Os atributos </h3>
+                    <p>
+                        Os atributos, como já foi dito, podem aparecer no diagrama na forma de elipses ligadas às entidades. Essa foi a notação original proposta, mas como podemos ver na Figura 4, ela deixa o diagrama com muitos itens e pode atrapalhar um pouco a organização destes.                     
+                        <img src="imgs/der04.png" width="800px" height="500px"></img>                 
+                    </p>
+                </div>
+        </div>
+
+        <div class="slide" id="slide68">
+                <div class="intro">
+                    <h3>DER -> Diagrama Entidade Relacionamento </h3>
+                    <p>
+                        Em uma notação mais atual, comumente utilizada na UML, os atributos aparecem listados dentro do próprio retângulo da entidade, enquanto o nome da entidade aparece no topo na forma de título.                    
+                        <img src="imgs/der05.png" width="800px" height="500px"></img>                 
+                    </p>
+                </div>
+        </div>
+
+        <div class="slide" id="slide69">
+                <div class="intro">
+                    <h3>DER -> Ferramentas CASE </h3>
+                    <p>                            
+                        Do inglês Computer-Aided Software Engineering, as chamadas ferramentas CASE são aquelas baseadas em computadores (softwares) utilizadas na Engenharia de Software para auxílio nas atividades desde análise de requisitos até ,modelagem de dados<br/>
+                        No contexto desse artigo, as ferramentas CASE permitem a criação de diagramas de forma simples em um ambiente de fácil utilização e com recursos para incluir as principais regras de composição dos diagramas. Exemplos comuns desse tipo de ferramenta são: Star UML, Astah e ERwin Data Modeler. Na Figura 6 vemos um exemplo de diagrama sendo construído no Astah.                     
+                    </p>
+                </div>
+        </div>
+
+        <div class="slide" id="slide610">
+                <div class="intro">
+                    <h3>DER -> BR Modelo </h3>
+                    <p>
+                    <img src="imgs/brModelo.jpeg" width="800px" height="500px"></img>    
+                    </p>
+                </div>
+        </div>
+
+        <div class="slide" id="slide611">
+                <div class="intro">
+                    <h3>DER -> DB Designer4 </h3>
+                    <p>
+                       <img src="imgs/dbDesigner4.jpeg" width="800px" height="500px"></img>                          
+                    </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide611">
+                <div class="intro">
+                    <h3>DER ->  Enterprise Architect -Pay </h3>
+                    <p>
+                            <img src="imgs/archEnterprise.png" width="800px" height="500px"></img>                          
+                                         
+                    </p>
+                </div>
+        </div>
+
+  </div>
+
+
+
+
+  <div class="section section_bg" id="section7">
+        <div class="section-title text-center">
+                <h5 class="title-bg">DDL</h5>
+        </div>
+    <div class="intro">
+        <h1>Scroll Down Last 7</h1>
+    </div>
+  </div>
+
+  <div class="section section_bg" id="section8">
+        <div class="section-title text-center">
+                <h5 class="title-bg">DML</h5>
+        </div>
+    <div class="intro">
+        <h1>Scroll Down Last 8</h1>
+    </div>
+  </div>
+
+  <div class="section section_bg" id="section9">
+        <div class="section-title text-center">
+                <h5 class="title-bg">TCL</h5>
+        </div>
+    <div class="intro">
+        <h1>Scroll Down Last 9</h1>
+    </div>
+  </div>
+
+  <div class="section section_bg" id="section10">
+        <div class="section-title text-center">
+                <h5 class="title-bg">ALGEBRA RELACIONAL</h5>
+        </div>
+    <div class="intro">
+        <h1>Scroll Down Last 10</h1>
+    </div>
+  </div>
+
+
+  <div class="section section_bg" id="section11">
+        <div class="section-title text-center">
+                <h5 class="title-bg">PLSQL</h5>
+        </div>
+
+        <div class="slide" id="slide1011">
+                <div class="intro">
+                    <h3>Atividades Caso de Uso</h3>
+                    <p>                      
+                        <br/>
+                        <a href="pdfs/SistemaControleAcademico.pdf" target="_blank">Sistema de Controle Academico</a>
+                        <br/>
+                        <a href="pdfs/EstudoCasoAeroporto.pdf" target="_blank">Estudo de Caso Aeroporto</a>
+                        <br/>
+                        <a href="pdfs/EstudoCasoAlmoxarifado.pdf" target="_blank">Estudo Caso Almoxarifado</a>
+                        <br/>
+                        <a href="pdfs/EstudoCasoAluguelCarro.pdf" target="_blank">Estudo Caso Aluguel Carro</a>
+                        <br/>
+                        <a href="pdfs/EstudoCasoCongressos.pdf" target="_blank">Estudo Caso Congressos</a>
+                        <br/>
+                        <a href="pdfs/EstudoCasoImoveis.pdf" target="_blank">Estudo Caso Imoveis</a>
+                        <br/>
+                        <a href="pdfs/ProjetoDatabaseClinicaMedica.pdf" target="_blank">Projeto Database Clinica Medica</a>
+                        <br/>
+                        <a href="pdfs/ExemploPraticoDER.pdf" target="_blank">Exemplo Pratico DER</a>
+                        <br/>
+                         
+                    </p>
+                </div>
+        </div>
+
+        <div class="slide" id="slide1112">
+                <div class="intro">
+                        <h3>Possiveis Projeto e Ideias</h3>
+                        <p>
+                          Minha biblioteca<br/>
+                          Aviso minha escola<br/>
+                          meu calendario - interligado com o da escola<br/>
+                          minha materia<br/>
+                          wiki escola<br/>
+                          Pais Digitais<br/>
+                          Eu Posso te ajudar<br/> 
+                          Minhas Disciplinas<br/>
+                          GEO - Minha Escola<br/>
+                          Minha Escola 360º - 3D<br/>
+                          Meus Podcast<br/>
+                          Projeto Integrador - APP pronta usar pra ajudar no estudo<br/>
+                          Quanto minha escola investiu em nós.<br/>
+                          Projeto conhecer Escolas 2018<br/>
+                          Projeto Transporte Coletivo 2018<br/>
+                          Mapa Papelaria 2018<br/>
+                          BI - Evolução escolar desde 2010(Projeto DashBoard).<br/>  
+                        </p>
+                </div>
+        </div>
+
+  </div>
+
+  <div class="section section_bg" id="section12">
+        <div class="section-title text-center">
+            <h5 class="title-bg">ATIVIDADES</h5>
+        </div>
+    <div class="intro">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <h1>Scroll Down Last 12</h1>
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class="d-block w-100" src="imgs/bg1.jpg" width="300px" height="500px" alt="First slide">
+                  </div>
+                  <a class="legend" href="item.html#project_url">
+                        <h3 class="display-3">Flowers</h3>
+                        <h4>Beautiful/ Pretty</h4>
+                  </a>
+
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="imgs/bg2.jpg"  width="300px" height="500px" alt="Second slide">
+                  </div>
+
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="imgs/bg3.jpg"  width="300px" height="500px" alt="Third slide">
+                  </div>
+
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+
+    </div>
+  </div>
+
+
+
+
+
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+      $('#fullpage').fullpage({
+        sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#1bbc9b', '#ccddff', '#1bbc9b', '#4BBFC3', '#7BAABE', '#1bbc9b', '#ccddff' , '#1bbc9b', '#7BAABE'],
+        anchors: ['firstPage', 'secondPage', '3rdPage', '4rdpage','5rdPage','6rdPage','7rdPage','8rdPage','9rdPage','10rdPage','11rdPage', 'lastPage'],
+        menu: '#menu',
+				'navigation': true,
+				'navigationPosition': 'right',
+				'navigationTooltips': ['firstPage', 'secondPage', '3rdPage', '4rdpage','5rdPage','6rdPage','7rdPage','8rdPage','9rdPage','10rdPage','11rdPage', 'lastPage'],
+
+				'afterLoad': function(anchorLink, index){
+					if(index == 2){
+						$('#iphone3, #iphone2, #iphone4').addClass('active');
+					}
+				},
+
+				'onLeave': function(index, nextIndex, direction){
+					if (index == 3 && direction == 'down'){
+						$('.section').eq(index -1).removeClass('moveDown').addClass('moveUp');
+					}
+					else if(index == 3 && direction == 'up'){
+						$('.section').eq(index -1).removeClass('moveUp').addClass('moveDown');
+					}
+
+					$('#staticImg').toggleClass('active', (index == 2 && direction == 'down' ) || (index == 4 && direction == 'up'));
+					$('#staticImg').toggleClass('moveDown', nextIndex == 4);
+					$('#staticImg').toggleClass('moveUp', index == 4 && direction == 'up');
+				}
+
+      });
+
+       var language = "pt-BR";
+        document.getElementById("band").src="imgs/brasil.png";
+        // with both
+        i18n.init({ lng: language }, function(err, t) {
+        var x = t("key");
+        // translate nav
+        $(".i18n").i18n()
+        // programatical access
+        var appName = t("app.name");
+        });
+  });
+
+  var count =0;
+  function myFunction() {
+    count % 2 == 0 ? language = "en-US" : language = "pt-BR";
+    count % 2 == 0 ?  document.getElementById("band").src="imgs/usa.png" : document.getElementById("band").src="imgs/brasil.png";
+    count++;
+      // with both
+      i18n.init({ lng: language }, function(err, t) {
+      var x = t("key");
+      // translate nav
+      $(".i18n").i18n()
+      // programatical access
+      var appName = t("app.name");
+      });
+  }
+
+</script>
+
+</body>
+</html>

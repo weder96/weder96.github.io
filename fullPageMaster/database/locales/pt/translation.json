@@ -1,0 +1,15 @@
+{
+    "app": {
+      "name": "i18next"
+    },
+    "nav": {
+      "home": "Inicio",
+      "intro":"Introdução",
+      "page1": "Pagina 1 ",
+      "page2": "Pagina 2 ",
+      "database":"Banco de Dados",
+      "project":"Projeto",
+      "relational":"Relacional",
+      "activies":"Atividades"
+    }
+  }
