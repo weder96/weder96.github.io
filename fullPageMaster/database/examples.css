@@ -559,3 +559,6 @@ audio, canvas, img, svg, video {
     top: 10%;
 	color: #ffffff;
 }
+.font_menor{
+	font-size: 16px !important;
+}

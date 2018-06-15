@@ -1066,7 +1066,7 @@
   <div class="section section_bg" id="section12">
         <div class="section-title text-center">
             <h5 class="title-bg">ATIVIDADES</h5>
-        </div>
+        </div>       
 
     <div class="slide" id="slide1202">
         <div class="intro">
@@ -1127,7 +1127,7 @@
     </div>
 
 
-    <div class="slide" id="slide1203">
+    <div class="slide" id="slide1204">
             <div class="intro">
                 <h3>Caso de Uso</h3>
                 <p>                                          
@@ -1162,6 +1162,289 @@
                 </p>
             </div>
        </div>
+
+
+       <div class="slide" id="slide1205">
+        <div class="intro">
+                <h3>CADASTRO NACIONAL DE VEÍCULOS:</h3>
+                <p class="font_menor">                                            
+                Elabore um modelo de dados para o cadastro nacional de veículos. Sabe-se que:<br/><br/>                
+                · O veículo possui sempre uma placa única em todo o país;<br/>                
+                · O veículo possui sempre um responsável legal por ele. É necessário manter o histórico desta responsabilidade (propriedade);<br/>                
+                · O veículo pertence sempre a uma categoria;<br/>                
+                · O veículo é sempre de uma marca e de um modelo e possui ano de fabricação.<br/><br/>                
+                
+                Considerando o mini-mundo acima pede-se:<br/>                                
+                – Construir o modelo conceitual, contendo:<br/>                
+                    - Entidades e seus atributos;<br/>                
+                    - Relacionamentos e seus atributos, se houver; <br/>
+                    - Diagrama de Entidades e Relacionamentos;<br/>                
+                    - Lista de Regras de Negocio;<br/>
+
+                – Construir o modelo relacional a partir do modelo conceitual, contendo: <br/>               
+                - Tabelas e colunas; <br/>               
+                - Chave Primária de cada tabela; <br/>               
+                - Chaves Estrangeiras; <br/>               
+                - Chaves Canditada de cada tabela, se houver.<br/><br/>                    
+                </p>
+        </div>
+     </div>
+
+
+     <div class="slide" id="slide1206">
+        <div class="intro">
+                <h3>Exercicio01 - Mapeamento do MER para o Modelo Relacional</h3>
+                <p>                                            
+                    1 - Fazer o mapeamento do MER referente ao exercício Empresa de Transporte Marítimo para o Modelo Relacional, definindo as tabelas, chaves primárias e chaves estrangeiras.<br/>                                        
+                    2 - Fazer o mapeamento do MER referente ao exercício Fábrica de Roupas para o Modelo Relacional, definindo as tabelas, chaves primárias e chaves estrangeiras.<br/>                                        
+                    3 - Fazer o mapeamento do MER referente ao exercício Loja de Equipamentos Eletronicos para o Modelo Relacional, definindo as tabelas,<br/> 
+                    chaves primárias e chaves estrangeiras.<br/><br/>
+                    4 - Fazer o mapeamento do MER referente ao exercício Prestadora de Serviços de Limpeza para o Modelo Relacional, definindo as tabelas, chaves primárias e chaves estrangeiras.<br/>
+                    <br/>
+                    <a href="exec/E3_Fabrica de Roupas.xlsx" target="_blank">E3_Fabrica de Roupas.xlsx</a>
+                    <br/>
+                    <a href="exec/E5-Transporte Maritimo.xlsx" target="_blank">E5-Transporte Maritimo.xlsx</a>
+                    
+                </p>
+        </div>
+     </div>
+
+
+     <div class="slide" id="slide1207">
+        <div class="intro">
+                <h3>Exercicio02 - </h3>
+                <p class="font_menor">                        
+                    Uma loja de venda de Eletrodomésticos quer automatizar o seu controle de compra e troca de aparelhos  por parte de seus clientes (pessoa. que já efetuou uma compra na loja). Todo aparelho vendido possui garantia de 1 ano, a partir da data de venda.  Isto significa que qualquer troca só poderá ser realizada dentro deste período, mesmo que já tenha havido várias trocas em função desta compra.<br/>
+                    No termo de garantia. é anotado a data da compra, marca, modelo e número de série do aparelho vendido, juntamente com o nome e endereço do cliente que o comprou.  A cada troca de aparelho, relativo a primeira compra, é verificado se ainda está no prazo de garantia, e é registrado o cliente que realizou a troca.  Somente o próprio comprador é quem pode realizar a troca.<br/>  
+                    Os aparelhos defeituosos são imediatamente devolvidos para a fábrica e não mais retomam para a loja. <br/>
+                    <br/>
+                    <a href="exec/passo-a-passo.txt" target="_blank">Passo a Passo</a>
+                </p>
+        </div>
+     </div>
+
+     <div class="slide" id="slide1208">
+        <div class="intro">
+                <h3>Exercício 3 - Fabrica de Roupas</h3>
+                <p class="font_menor">                                 
+                Uma fábrica de roupas exclusivas (cada modelo, único, é projetado por estilistas famosos) deseja um sistema para controlar sua produção.  A fábrica conta atualmente com 1230 funcionários sendo que a maior parte dos mesmos são costureiras trabalhando na atividade fim. A fábrica possui aproximadamente 600 máquinas de costura de diversos tipos (overlock, zig zag, costura reta, etc) de diversos fabricantes.<br/>     
+                Para ingressar como costureira, a funcionária é avaliada para determinar em que tipo de máquina ela possui habilitação. Cada máquina pode realizar um ou mais tipos de costura.     <br/>
+                Cada peça de roupa é produzida integralmente por uma costureira em uma máquina, sendo que neste período nem a costureira, nem a máquina podem ser alocados para outra coisa.      <br/>
+                A remuneração das costureiras é mensal baseado em uma alíquota fixa (15%) sobre o preço de venda de cada peça. Nenhuma costureira pode receber menos que um determinado valor mínimo que é negociado no momento da contratação de cada uma. As costureiras são divididas em supervisões, cada uma possuindo uma supervisora que é a responsável pela qualidade do que é produzido, e pela monitoração das máquinas que estão em conserto.   A máquina só vai para conserto após o término da produção da peça.  A supervisora da costureira que estava produzindo nesta máquina se toma a responsável pela monitoração de seu conserto. <br/>
+                
+                
+                A fábrica necessita das seguintes informações: <br/>     
+                a) Relatório de peças produzidas por uma costureira num determinado período, no seguinte formato: modelo da peça, descrição do modelo, data e hora de início e término da fabricação, código da máquina de costura, localização da máquina e o fabricante. <br/>     
+                b) Relatório das costureiras sem produção no período (matrícula da costureira, nome, Valor Mínimo Negociado). <br/>     
+                c) Relação das máquinas disponíveis, informando para cada uma o seu fabricante e o(s) tipo(s) de costura que possui. <br/>     
+                d) Quais costureiras estão disponíveis e habilitadas a trabalhar em um tipo de máquina no momento. <br/>     
+                e) Relação das máquinas que estiveram mais de 10 vezes em conserto, contendo: código da máquina e para cada conserto, matrícula e nome da supervisora responsável, data início e término do conserto.<br/>
+                </p>
+        </div>
+     </div>
+
+     <div class="slide" id="slide1209">
+        <div class="intro">
+                <h3>Exercício 4 - Biblioteca Universitária</h3>
+                <p class="font_menor">      
+                        Elabore um diagrama de entidade e relacionamentos para atender as necessidades de informação de uma biblioteca universitária. São elas:<br/>
+                        
+                        · O cadastro dos usuários com endereço completo, inclusive com a informação do curso do usuário e data de início e de término previsto;<br/>                        
+                        · Cada usuário poderá fazer empréstimo de uma ou mais obras. Cada obra poderá ser emprestada mais de uma vez ao mesmo usuário.<br/>                        
+                        · O cadastro das obras que constam no acervo da biblioteca, com o titulo, codigo ISBN, ano de publicacao, edição, editora, autor e a devida classificação. As obras são clasificadas como: livros científicos, coleções, matemarica, historia, filosofia, economia, administracao e negocios, engenharia, sociologia, literatura, artes, periódicos científicos, periódicos informativos, entretenimento, etc.;<br/>                        
+                        · A língua em que encontra-se a obra. Exemplo: inglês, espanhol, português, etc.;<br/>                        
+                        · O(s) autor(es) da obra, ou seja, cada obra poderá possuir um ou mais autores e cada autor poderá ter escrito uma ou mais obras. Para o cadastro de autores deverão constar o nome e a nacionalidade do mesmo;<br/>                        
+                        · As editoras das obras com a respectiva cidade. Cada editora poderá estar ligado a uma ou mais obras porém cada obra está associada a somente uma editora.<br/>                        
+                        Para resolver o caso acima, siga os passos:<br/>                        
+                        1 - Identifique as entidades que deverão ser criadas.<br/>                        
+                        2 - Efetue os relacionamentos entre as entidades identificadas<br/>                        
+                        3 - Identifique para cada entidade e relacionamento os atributos;<br/>                        
+                        4 - Identifique para cada entidade o atributo que será o identificador das ocorrencias da entidade;<br/>
+                </p>
+        </div>
+     </div>
+
+     <div class="slide" id="slide1210">
+        <div class="intro">
+                <h3>Exercício 6 - Prestadora de Serviços de Limpeza</h3>
+                <p class="font_menor">                            
+                        A firma "W. R. Domésticas" presta serviços de limpeza e deseja um sistema automatizado que cuide, principalmente, da alocação dos empregados aos pedidos de serviço feitos pelos clientes e de possíveis criticas no momento da alocação.<br/>                        
+                        O cliente telefona para a firma e faz um pedido de serviço. Neste momento a atendente verifica no cadastro se ele já é um cliente da firma; caso não seja, ela cadastra-o solicitando: CGC, Razão Social, Endereço e Telefone: se for pessoa jurídica, ou CPF, Nome, Endereço e Telefone, se for pessoa física. A firma atribui um código próprio para identificar qualquer um dos seus clientes.                        <br/>
+                        Estando o cliente devidamente cadastrado, a atendente abre um bloco de pedidos e preenche um "Pedido de Serviço", anotando: o nome do cliente, a data da abertura, a data para realização dos serviços, o local onde deverá ser realizado, e uma relação dos serviços que o cliente quer que seja executado naquele local, com a respectiva metragem quadrada de cada um.  A atendente consulta uma tabela de serviços ( código do serviço, descrição, valor por m2, duração por m2) e anota no pedido a duração e o valor, unitário e total dos serviços.  Após o preenchimento do pedido, a atendente informa ao cliente o número do seu pedido, o valor total a ser pago e a duração máxima para o término dos serviços, supondo que serão executados em seqüência.<br/>
+                        Todo empregado está habilitado a executar algum tipo de serviço de limpeza porém, apesar do treinamento fornecido, nem todos os empregados podem executar todos os tipos de serviço.  Caso a firma não possua nenhum empregado habilitado para a execução de um tipo de serviço que deverá ser prestado a um pedido, antes da realização é providenciado um treinamento e, posteriormente, um empregado é alocado ao pedido.  No momento de alocar cada empregado que irá atender ao pedido, é verificado se ele não está alocado em outro pedido no momento de sua realização, e se ele está habilitado para algum dos serviços exigidos no pedido (se não estiver habilitado, não pode ser alocado).<br/>
+                        <br/>
+                        A alocação dos empregados ao pedido é considerada completa se existir para cada tipo de serviço exigido no pedido, pelo menos um empregado habilitado alocado ao pedido.  "Qual empregado" vai executar "qual serviço do pedido", é decidido pela própria equipe no momento da realização, e não temos interesse em registrar.<br/>
+                        
+                        O sistema deverá ser capaz de informar, dentre outras coisas:                        <br/>
+                            Relatório dos pedidos com alocação incompleta, imprimindo para cada alocação incompleta o número do pedido, código do cliente, nome ou razão social do cliente, data da realização e uma relação de todos os serviços exigidos com sua respectiva metragem quadrada.                                                <br/>
+                            A relação de todos os empregados(matrícula e nome) que tenham habilitação em um determinado tipo de serviço e que não esteja alocados a (trabalhando em) um pedido, em uma determinada data.                                         <br/>
+                </p>
+        </div>
+     </div>
+
+     <div class="slide" id="slide1211">
+        <div class="intro">
+                <h3>Exercício 7-2 - Normalização</h3>
+                <p>      
+                <a href="exec/normalizacao.txt" target="_blank">Passo a Passo</a>
+                </p>
+        </div>
+     </div>
+
+
+     <div class="slide" id="slide1212">
+        <div class="intro">
+                <h3>Exercício 8 - Firma de Equipamentos de Informática</h3>
+                <p class="font_menor">                               
+                        Uma firma que utiliza equipamentos de informática necessita de um sistema que gerencie a sua rede de micro-computadores (ponto-a-ponto, não existe servidor da rede), controlando usuários. máquinas e impressoras.  A rede é composta de servidores de impressão, estações e impressoras. Os servidores de  impressão, e suas impressoras, ficam dentro de uma sala própria. O sistema também irá controlar a partir de qual estação o usuário está conectado a rede, e os seus arquivos enviados para impressão.<br/>                        
+                        Para todos os micros deseja-se cadastrar: código do patrimônio, descrição, capacidade do disco rígido, quantidade de memória e, sendo uma estação a sua localização, sendo um servidor o tamanho máximo do buffer e a quantidade máxima de buffers de impressão e que ele suporta, e as impressoras ligadas a ele (no máximo 3 ), caso existam. Para impressoras deseja-se cadastrar: código do patrimônio, descrição, velocidade (ppm) e, consequentemente, o servidor a que está ligada. Nesta firma todas as impressoras estão ligadas a algum servidor, não sendo compartilhada por mais de um servidor.                        <br/>
+                        Para controlar os usuários, o sistema só precisa do nome de guerra e senha de cada um. Como os usuários  não possuem máquina fixa, a sua conexão à rede pode ocorrer a partir de qualquer estação. Tendo o usuário uma conexão ativa, o sistema não permitirá que ele se conecte a partir de outra estação. Há interesse em controlar apenas as conexões ativas (as conexões desfeitas são irrelevantes).                        <br/>
+                        No caso de impressão, o sistema deverá saber qual o arquivo, de quem ele é, e em qual impressora será  impresso (atenção: somente usuários com conexão ativa é que possuem condição de enviar arquivos para , impressão).  É o usuário que escolhe a impressora onde ele quer que o seu arquivo seja impresso. Nada impede que usuários diferentes enviem arquivos de mesmo nome para impressão, porém (nesta firma) para o mesmo usuário isso não é possível, mesmo em impressoras diferentes. Neste caso o sistema permite alterar o número de cópias a serem impressas. Só deve ser mantido registro dos arquivos que ainda estão na fila de impressão.                        <br/>
+                        O sistema deverá listar, para cada impressora, os arquivos que estão aguardando impressão, com o  respectivo usuário que a enviou, mesmo que o usuário não esteja mais ativo na rede.  Sempre que solicitado o sistema exibirá, para cada estação, o seu código e, caso exista, o nome do usuário conectado,  a data e hora início desta conexão e, se houver, nome e quantidade de cópias dos arquivos que ele enviou  e que ainda estão aguardando impressão.                                     <br/>
+                </p>
+        </div>
+     </div>
+
+
+     <div class="slide" id="slide1213">
+        <div class="intro">
+                <h3>Exercicio 11 - Modelo Relacional</h3>
+                <p>                              
+                  Derive o modelo relacional a partir dos relacionamentos abaixo:                         <br/>
+                  1 ) Um funcionario é alocado em um departamento e um departamento pode alocar um ou muitos funcionários.                   <br/>
+                  <img src="imgs/exer01.png" width="800px" height="500px"></img>                                                       
+                </p>
+        </div>
+     </div>
+
+
+     <div class="slide" id="slide121301">
+            <div class="intro">
+                    <h3>Exercicio 11 - Modelo Relacional</h3>
+                    <p>                              
+                      Derive o modelo relacional a partir dos relacionamentos abaixo:                         <br/>                      
+                      2 ) Um pedido é composto por itens de pedido e cada item compõe apenas um pedido.<br/>
+                      <img src="imgs/exerc02.jpg"  width="800px" height="500px"></img>                                                         
+            </div>
+         </div>
+
+
+     <div class="slide" id="slide121302">
+            <div class="intro">
+                    <h3>Exercicio 11 - Modelo Relacional</h3>
+                    <p>                              
+                      Derive o modelo relacional a partir dos relacionamentos abaixo:                         <br/>                                            
+                     3 ) Um funcionario gerencia um departamento e um departamento pode ser gerenciado por um funcionario.<br/>
+                     <img src="imgs/exerc03.jpg"  width="800px" height="500px"></img>                       
+                    </p>
+            </div>
+         </div>
+
+
+
+     <div class="slide" id="slide121303">
+            <div class="intro">
+                    <h3>Exercicio 11 - Modelo Relacional</h3>
+                    <p>                              
+                      Derive o modelo relacional a partir dos relacionamentos abaixo:                         <br/>                                                                 
+                     4 ) Um projeto aloca muitos funcionarios e muitos funcionarios sao alocados em um projeto em uma data.<br/>
+                      <img src="imgs/exerc04.jpg"  width="800px" height="500px"></img>                       
+                    </p>
+            </div>
+         </div>
+
+
+
+     <div class="slide" id="slide121304">
+            <div class="intro">
+                    <h3>Exercicio 11 - Modelo Relacional</h3>
+                    <p>                              
+                      Derive o modelo relacional a partir dos relacionamentos abaixo:                         <br/>                                                                                      
+                     5 )  Uma disciplina possui como pre-requisito uma outra disciplina.                <br/>                   
+                     <img src="imgs/exerc06.jpg"  width="800px" height="500px"></img>  
+                    </p>
+            </div>
+         </div>
+
+     <div class="slide" id="slide1214">
+        <div class="intro">
+                <h3>Exercicio 12 - Modelo Relacional</h3>
+                <p>       
+                  Construa o modelo relacional para o diagrama de entidade e relacionamentos abaixo:<br/>                                     
+                  <img src="imgs/universidade2.jpg"  width="800px" height="500px"></img>  
+                </p>
+        </div>
+     </div>
+
+
+     <div class="slide" id="slide1215">
+        <div class="intro">            
+                <h3>Exercício 13 - Controle de Funcionários</h3>                        
+           <p class="font_menor">                                            
+            Elabore um modelo conceitual de dados para o cadastro de funcionários<br/>
+            de uma empresa, sabendo-se que:<br/>                        
+            · Uma Empresa pode ter várias filiais e possui um CNPJ e a razão social.<br/>            
+            · Cada empresa poderá estar cadastrada apenas uma vez.<br/>            
+            · Cada Filial de uma empresa pode ter vários departamentos.<br/>            
+            · Cada filial poderá estar cadastrada apenas uma vez.<br/>            
+            · Um departamento de uma filial pode ter vários empregados.<br/>            
+            · Cada empregado poderá estar vinculado a uma filial apenas uma vez.<br/>                        
+            Considerando o mini-mundo acima pede-se:<br/>
+            
+            
+            – Construir o modelo conceitual, contendo:<br/>            
+                - Entidades e seus atributos;<br/>            
+                - Relacionamentos e seus atributos, se houver;<br/>            
+                - Diagrama de Entidades e Relacionamentos;<br/>            
+                - Lista de Regras de Negocio;<br/>
+            
+            – Construir o modelo relacional a partir do modelo conceitual, contendo:<br/>            
+            - Tabelas e colunas;<br/>            
+            - Chave Primária de cada tabela;<br/>            
+            - Chaves Estrangeiras;<br/>            
+            - Chaves Canditadas, se houver.<br/>                
+                </p>
+        </div>
+     </div>
+
+     <div class="slide" id="slide1216">
+        <div class="intro">
+                <h3>Exercicio 15 - Modelo Relacional 01</h3>
+                <p>                                                                    
+                   1 ) Considerando o diagrama de entidade e relacionamentos abaixo, construa o modelo relacional correspondente.<br/>
+                   <img src="imgs/E5-Transporte Marítimo.jpg"  width="800px" height="500px"></img>  
+                </p>
+        </div>
+     </div>
+
+     <div class="slide" id="slide1217">
+            <div class="intro">
+                    <h3>Exercicio 15 - Modelo Relacional 02</h3>
+                    <p>                           
+                        2 ) Considerando o diagrama de entidade e relacionamentos abaixo, construa o modelo relacional correspondente<br/>                 
+                        <img src="imgs/E6-Serviços de Limpeza.jpg"  width="800px" height="500px"></img>  
+                    </p>
+            </div>
+    </div>
+
+    <div class="slide" id="slide1218">
+        <div class="intro">
+                <h3>Desafio 01 </h3>
+                <p>       
+                    <a href="pdfs/Desafio.pdf" target="_blank">Mini Mundo</a>                                     
+                </p>
+        </div>
+    </div>
+         
+    <div class="slide" id="slide1219">
+            <div class="intro">
+                    <h3>Desafio 02</h3>
+                    <p>                                            
+                        <a href="pdfs/ClinicaMedicaMiniMunod.pdf" target="_blank">Clinica Medica Mini Mundo</a>   
+                    </p>
+            </div>
+        </div>
+
 
 
   </div>

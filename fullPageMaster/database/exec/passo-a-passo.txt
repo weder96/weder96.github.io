@@ -1,0 +1,38 @@
+Passos para resolver um Problema de Modelagem de Dados
+
+1 - Entender o problema, as necessidades de informmação, os requisitos de informação do cliente. 
+
+	Quais processos de negócio devem ser considerados?
+	Quais informações são necessárias para os processos?
+	Quais conceitos, fatos e elementos do negócio são relevantes para o negócio e devem ser representados?
+	
+2 - Identificar as entidades
+
+	EQUIPAMENTO
+	CLIENTE
+	FABRICA
+	
+3 - Identificar os relacionamentos entre as entidades e a cardinalidade de cada relacionamentos
+
+	CLIENTE COMPRA EQUIPAMENTO
+	CLIENTE TROCA EQUIPAMENTO
+	EQUIPAMENTO DEVOLUCAO FABRICA
+	
+4 - Identificar os atributos das entidades e dos relacionamentos ( se houver )
+
+	COMPRA.data_venda
+	EQUIPAMENTO.marca
+	EQUIPAMENTO.modelo
+	EQUIPAMENTO.numero_serie
+	CLIENTE.nome
+	CLIENTE.endereco
+	
+5 - Identificar as regras de negócio e rastrea-las no modelo de entidades e relacionamentos
+
+	RN1 - Todo aparelho vendido possui garantia de 1 ano, a partir da data de venda
+	RN2 - qualquer troca só poderá ser realizada dentro do periodo de garantia, mesmo 
+		  que já tenha havido várias trocas em função desta compra.
+	RN3 - Somente o próprio comprador é quem pode realizar a troca.
+	RN4 - A cada troca de aparelho, relativo a primeira compra, é verificado se ainda
+		  está no prazo de garantia, e é registrado o cliente que realizou a troca
+	

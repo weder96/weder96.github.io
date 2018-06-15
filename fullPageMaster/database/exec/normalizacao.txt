@@ -1,0 +1,66 @@
+ Exercício 7-2 - Normalização
+1 ) Normalizar o modelo relacional abaixo que contem informações sobre autores e artigos publicados em vários idiomas
+
+Tabela [autor]
+- id
+- nome
+
+Tabela [artigo]
+- id
+- autor_id
+- conteudo_en
+- conteudo_de
+- conteudo_fr
+- conteudo_es
+
+2 ) Normalizar o modelo relacional abaixo que contem informações sobre a folha de pagamento de uma empresa:
+
+Tabela Empregador
+matricula
+nome
+cargo
+data de admissao
+
+Tabela Contra-Cheque
+* matricula
+* ano
+salario_janeiro
+salario_fevereiro
+salario_marco
+salario_abril
+salario_maio
+salario_junho
+salario_julho
+salario_agosto
+salario_setembro
+salario_outubro
+salario_novembro
+salario_dezembro
+
+inss_janeiro
+inss_fevereiro
+inss_marco
+inss_abril
+inss_maio
+inss_junho
+inss_julho
+inss_agosto
+inss_setembro
+inss_outubro
+inss_novembro
+inss_dezembro
+
+fgts_janeiro
+fgts_fevereiro
+fgts_marco
+fgts_abril
+fgts_maio
+fgts_junho
+fgts_julho
+fgts_agosto
+fgts_setembro
+fgts_outubro
+fgts_novembro
+fgts_dezembro
+
+Observação: salario, inss e fgts são rúbricas ou verbas que podem ser um provento  ou um desconto no contra-cheque.
