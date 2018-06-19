@@ -12,6 +12,7 @@
       "mer":"MER",
       "der":"DER",
       "ddl":"DDL",
+      "query":"QUERY",
       "dml":"DML",
       "tcl":"TCL",
       "plsql":"PLSQL",

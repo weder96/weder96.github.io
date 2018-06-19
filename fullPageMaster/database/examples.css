@@ -118,6 +118,9 @@ p{
 #section12 {
 	background-image: url("imgs/bg17.jpg");
 }
+#section13 {
+	background-image: url("imgs/bg10.jpg");
+}
 
 .section_bg{
 	background-repeat: no-repeat;
@@ -180,7 +183,8 @@ p{
 #section1::after , #section2::after , #section3::after, 
 #section4::after , #section5::after , #section6::after, 
 #section7::after , #section8::after , #section9::after, 
-#section10::after , #section11::after , #section12::after{
+#section10::after , #section11::after , #section12::after,
+#section13::after{
     content: "";
     background: -webkit-gradient(linear, right top, left top, from(#D1335B), to(#00152e));
     background: linear-gradient(to left, #D1335B, #00152e);
@@ -561,4 +565,7 @@ audio, canvas, img, svg, video {
 }
 .font_menor{
 	font-size: 16px !important;
+}
+.comandsql{	
+	background-color: #cdcdcd;	
 }

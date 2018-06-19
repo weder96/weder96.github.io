@@ -1,3 +1,8 @@
+create table Categoria(
+id integer, 
+descricao text,  
+categoria_pai integer);
+
 insert into Categoria (id, descricao) values (1, 'Eletrônicos');
 insert into Categoria (id, descricao, categoria_pai) values (2, 'TVs', 1);
 insert into Categoria (id, descricao, categoria_pai) values (3, 'Computadores', 1);

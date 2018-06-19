@@ -60,6 +60,7 @@
     <li class="nav-item" data-menuanchor="6rdPage">   <a href="#6rdPage"><i class="fas fa-plug fa-space icon"></i>                    <span data-i18n="nav.der"></span></a></li>
     <li class="nav-item" data-menuanchor="7rdPage">   <a href="#7rdPage"><i class="fa fa-handshake fa-space icon"></i>                <span data-i18n="nav.ddl"></span></a></li>
     <li class="nav-item" data-menuanchor="8rdPage">   <a href="#8rdPage"><i class="fa fa-hand-paper fa-space icon"></i>               <span data-i18n="nav.dml"></span></a></li>
+    <li class="nav-item" data-menuanchor="81rdPage">   <a href="#81rdPage"><i class="fa fa-hand-paper fa-space icon"></i>             <span data-i18n="nav.query"></span></a></li>
     <li class="nav-item" data-menuanchor="9rdPage">   <a href="#9rdPage"><i class="fas fa-paste  fa-space icon"></i>                  <span data-i18n="nav.tcl"></span></a></li>
     <li class="nav-item" data-menuanchor="10rdPage">  <a href="#10rdPage"><i class="fa fa-not-equal fa-space icon"></i>               <span  data-i18n="nav.relational"></span></a></li>
     <li class="nav-item" data-menuanchor="11rdPage">  <a href="#11rdPage"><i class="fa fa-superscript fa-space icon"></i>             <span data-i18n="nav.plsql"></span></a></li>
@@ -987,9 +988,9 @@
 
         <div class="slide" id="slide611">
                 <div class="intro">
-                    <h3>DER ->  Enterprise Architect -Pay </h3>
+                    <h3>DER ->  Manual Postgres Vesion 9.6 </h3>
                     <p>
-                            <img src="imgs/archEnterprise.png" width="800px" height="500px"></img>                          
+                        <a href="https://www.postgresql.org/files/documentation/pdf/9.6/postgresql-9.6-A4.pdf" target="_blank">The PostgreSQL Global Development Group - PDF</a>                          
                                          
                     </p>
                 </div>
@@ -998,27 +999,363 @@
   </div>
 
 
+  
 
 
   <div class="section section_bg" id="section7">
         <div class="section-title text-center">
                 <h5 class="title-bg">DDL</h5>
         </div>
-    <div class="intro">
-        <h1>Scroll Down Last 7</h1>
-    </div>
+    
+        <div class="slide" id="slide71">
+            <div class="intro">
+                <h3>DDL ->  Current Date </h3>
+                <p>
+                    <span class="comandsql">CMD:</span> SELECT current_date<br/>
+                    <span class="comandsql">CMD:</span> SELECT 2 + 2
+                                     
+                </p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide72">
+            <div class="intro">
+                <h3>DDL ->  CREATE NEW TABLE AND DROP TABLE </h3>
+                <p>
+                    <span class="comandsql">CMD:</span> CREATE TABLE weather ( <br/>
+                        city            varchar(80), <br/>
+                        temp_lo         int,           -- low temperature <br/>
+                        temp_hi         int,           -- high temperature <br/>
+                        prcp            real,          -- precipitation <br/>
+                        date            date <br/>
+                        ); <br/>
+
+
+                    <span class="comandsql">CMD:</span> DROP TABLE weather;
+                                     
+                </p>
+            </div>
+        </div>
+
+
+        <div class="slide" id="slide73">
+            <div class="intro">
+                <h3>DDL -> Default Values </h3>
+                <p>
+                    <span class="comandsql">CMD:</span> CREATE TABLE products (<br/>
+                        product_no <b>SERIAL</b>,<br/>
+                        name text,<br/>
+                        price numeric <b>DEFAULT 9.99,</b> <br/>
+                        product_no integer <b>DEFAULT nextval('products_product_no_seq')</b>
+                    );<br/>
+                                     
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="slide" id="slide74">
+            <div class="intro">
+                <h3>DDL -> Constraints </h3>
+                <p>
+                    <span class="comandsql">CMD:</span> CREATE TABLE products (<br/>
+                        product_no integer <b>UNIQUE</b>,<br/>
+                        name text  <b>NOT NULL</b>,<br/>
+                        price numeric <b>CHECK (price > 0),</b><br/>
+                        price_consumer numeric <b>CONSTRAINT positive_price CHECK (price > 0),</b><br/>
+                        discounted_price numeric <b>CHECK (discounted_price > 0),</b><br/>
+                        <b>>CHECK (price > discounted_price)</b><br/>
+                    );
+                                     
+                </p>
+            </div>
+        </div>
+
+
+        <div class="slide" id="slide75">
+            <div class="intro">
+                <h3>DDL -> Constraints UNIQUE</h3>
+                <p>
+                    <span class="comandsql">CMD:</span> CREATE TABLE products (<br/>
+                        product_no integer,<br/>
+                        product_2 integer CONSTRAINT must_be_different UNIQUE,
+                        UNIQUE (product_no),
+                        a integer,                        
+                        c integer,
+                        UNIQUE (a, c)
+                    );
+                                     
+                </p>
+            </div>
+        </div>
+
+
+        <div class="slide" id="slide76">
+            <div class="intro">
+                <h3>DDL -> Primary Key</h3>
+                <p>
+                    <span class="comandsql">CMD:</span> CREATE TABLE products (<br/>
+                    product_no integer UNIQUE NOT NULL,<br/>
+                    product_2 integer PRIMARY KEY,                    
+                    a integer,                        
+                    c integer,
+                    PRIMARY KEY (a, c)
+                );
+                                     
+                </p>
+            </div>
+        </div>
+
+
+        <div class="slide" id="slide77">
+            <div class="intro">
+                <h3>DDL -> Foreign Key</h3>
+                <p>
+                    <span class="comandsql">CMD:</span> 
+                    CREATE TABLE orders (<br/>
+                        product_2 integer REFERENCES products ON DELETE RESTRICT,<br/>
+                        order_id_2 integer REFERENCES orders ON DELETE CASCADE,<br/>
+
+                        order_id integer PRIMARY KEY,<br/>
+                        product_no integer REFERENCES products (product_no),<br/>
+                        product_no integer REFERENCES products,<br/>
+                        quantity integer,<br/>
+                        FOREIGN KEY (b, c) REFERENCES other_table (c1, c2)<br/>
+                    );<br/>
+                                     
+                </p>
+            </div>
+        </div>
+
+
+
+
+        <div class="slide" id="slide78">
+            <div class="intro">
+                <h3>DDL -> Modifying Tables -> Add columns</h3>
+                <p>
+                    <span class="comandsql">CMD:</span> ALTER TABLE products ADD COLUMN description text;
+                    <span class="comandsql">CMD:</span> ALTER TABLE products ADD COLUMN description text CHECK (description <> '');                                                         
+                </p>
+            </div>
+        </div>
+
+
+        <div class="slide" id="slide79">
+            <div class="intro">
+                <h3>DDL -> Modifying Tables ->  Removing a Column</h3>
+                <p>
+                    <span class="comandsql">CMD:</span> ALTER TABLE products DROP COLUMN description;
+                    <span class="comandsql">CMD:</span> ALTER TABLE products DROP COLUMN description CASCADE;
+                </p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide710">
+            <div class="intro">
+                <h3>DDL -> Modifying Tables ->  Adding a Constraint</h3>
+                <p>
+                    <span class="comandsql">CMD:</span> ALTER TABLE products ADD CHECK (name <> '');<br/>
+                    <span class="comandsql">CMD:</span> ALTER TABLE products ADD CONSTRAINT some_name UNIQUE (product_no)<br/>
+                    <span class="comandsql">CMD:</span> ALTER TABLE products ADD FOREIGN KEY (product_group_id) REFERENCES product_groups;<br/>
+                    <span class="comandsql">CMD:</span> ALTER TABLE products ALTER COLUMN product_no SET NOT NULL;<br/>
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="slide" id="slide711">
+            <div class="intro">
+                <h3>DDL -> Modifying Tables -> Removing a Constraint</h3>
+                <p>
+                    <span class="comandsql">CMD:</span> ALTER TABLE products DROP CONSTRAINT some_name;<br/>
+                    <span class="comandsql">CMD:</span> ALTER TABLE products ALTER COLUMN product_no DROP NOT NULL;<br/>                                        
+                </p>
+            </div>
+        </div>
+
+
+        <div class="slide" id="slide712">
+            <div class="intro">
+                <h3>DDL -> Modifying Tables -> Changing a Column's Default Value</h3>
+                <p>
+                    <span class="comandsql">CMD:</span> ALTER TABLE products ALTER COLUMN price SET DEFAULT 7.77;<br/>                    
+                    <span class="comandsql">CMD:</span> ALTER TABLE products ALTER COLUMN price DROP DEFAULT;<br/>
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="slide" id="slide713">
+            <div class="intro">
+                <h3>DDL -> Modifying Tables -> Changing a Column's Data Type</h3>
+                <p>
+                    <span class="comandsql">CMD:</span> ALTER TABLE products ALTER COLUMN price TYPE numeric(10,2);<br/>                                        
+                </p>
+            </div>
+        </div>
+
+
+        <div class="slide" id="slide714">
+            <div class="intro">
+                <h3>DDL -> Modifying Tables -> Renaming a Column</h3>
+                <p>
+                    <span class="comandsql">CMD:</span> ALTER TABLE products RENAME COLUMN product_no TO product_number;<br/>                                        
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="slide" id="slide715">
+            <div class="intro">
+                <h3>DDL -> Modifying Tables -> Renaming a Column</h3>
+                <p>
+                    <span class="comandsql">CMD:</span> ALTER TABLE products RENAME COLUMN product_no TO product_number; <br/>                                        
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="slide" id="slide716">
+            <div class="intro">
+                <h3>DDL -> Modifying -> Privileges</h3>
+                <p>
+                    <span class="comandsql">CMD:</span> GRANT UPDATE ON accounts TO joe; <br/>                                        
+                    <span class="comandsql">CMD:</span> REVOKE ALL ON accounts FROM PUBLIC; <br/>                                        
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="slide" id="slide717">
+            <div class="intro">
+                <h3>DDL -> Modifying -> Privileges</h3>
+                <p>
+                    <span class="comandsql">CMD:</span> GRANT UPDATE ON accounts TO joe; <br/>                                        
+                    <span class="comandsql">CMD:</span> GRANT SELECT ON mytable TO PUBLIC; <br/> 
+                    <span class="comandsql">CMD:</span> GRANT SELECT, UPDATE, INSERT ON mytable TO admin; <br/> 
+                    <span class="comandsql">CMD:</span> GRANT SELECT (col1), UPDATE (col1) ON mytable TO miriam_rw; <br/> 
+                    <br/>
+                    <span class="comandsql">CMD:</span> REVOKE ALL ON accounts FROM PUBLIC; <br/>                                        
+                </p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide718">
+            <div class="intro">
+                <h3>DDL -> Modifying -> Create User</h3>
+                <p>                    
+                    <span class="comandsql">CMD:</span> CREATE USER weder WITH PASSWORD 'weder96'; <br/>                                        
+                </p>
+            </div>
+        </div>
+
   </div>
+
 
   <div class="section section_bg" id="section8">
         <div class="section-title text-center">
                 <h5 class="title-bg">DML</h5>
         </div>
+
+        <div class="slide" id="slide81">
+            <div class="intro">
+                <h3>DML -> Inserting Data </h3>
+                <p>
+                        CREATE TABLE products (<br/>
+                            product_no integer,<br/>
+                            name text,<br/>
+                            price numeric<br/>
+                        );<br/>
+
+                    <span class="comandsql">CMD:</span> INSERT INTO products VALUES (1, 'Cheese', 9.99);<br/>
+                    <span class="comandsql">CMD:</span> INSERT INTO products (product_no, name, price) VALUES (1, 'Cheese', 9.99);<br/>
+                    <span class="comandsql">CMD:</span> INSERT INTO products (name, price, product_no) VALUES ('Cheese', 9.99, 1);<br/>
+
+                    <span class="comandsql">CMD:</span> INSERT INTO products (product_no, name) VALUES (1, 'Cheese');<br/>
+                    <span class="comandsql">CMD:</span> INSERT INTO products VALUES (1, 'Cheese');<br/>
+
+                    <span class="comandsql">CMD:</span> INSERT INTO products (product_no, name, price) VALUES (1, 'Cheese', DEFAULT);<br/>
+                    <span class="comandsql">CMD:</span> INSERT INTO products DEFAULT VALUES;    <br/>
+
+
+                    <span class="comandsql">CMD:</span> INSERT INTO products (product_no, name, price) VALUES<br/>
+                                         (1, 'Cheese', 9.99),<br/>
+                                         (2, 'Bread', 1.99),<br/>
+                                         (3, 'Milk', 2.99);<br/>
+
+
+                 <span class="comandsql">CMD:</span> INSERT INTO products (product_no, name, price)<br/>
+                                         SELECT product_no, name, price FROM new_products<br/>
+                                                WHERE release_date = 'today';<br/>
+                                     
+                </p>
+            </div>
+        </div>
+
+        <div class="slide" id="slide82">
+            <div class="intro">
+                <h3>DML -> Updating Data </h3>
+                <p>
+                    <span class="comandsql">CMD:</span> UPDATE products SET price = 10 WHERE price = 5;<br/>
+                    <span class="comandsql">CMD:</span> UPDATE products SET price = price * 1.10;<br/>
+                    <span class="comandsql">CMD:</span> UPDATE mytable SET a = 5, b = 3, c = 1 WHERE a > 0;<br/>
+                                     
+                </p>
+            </div>
+        </div>
+
+
+        <div class="slide" id="slide83">
+                <div class="intro">
+                    <h3>DML -> Deleting Data </h3>
+                    <p>
+                        <span class="comandsql">CMD:</span> DELETE FROM products WHERE price = 10;<br/>
+                        <span class="comandsql">CMD:</span> DELETE FROM products;<br/>                                                                 
+                    </p>
+                </div>
+        </div>
+
+
+
+        <div class="slide" id="slide84">
+                <div class="intro">
+                    <h3>DML -> Returning Data From Modified Rows </h3>
+                    <p>
+                        <span class="comandsql">CMD:</span> CREATE TABLE users (firstname text, lastname text, id serial primary key);<br/>
+                        <span class="comandsql">CMD:</span> INSERT INTO users (firstname, lastname) VALUES ('Joe2', 'Cool3') RETURNING id; <br/>                                                 
+                        <span class="comandsql">CMD:</span> UPDATE users SET firstname = 'weder' WHERE id =1  RETURNING firstname, lastname AS new_name;
+                    </p>
+                </div>
+        </div>
+
+
+
+        
+
+
+
+       
+  </div>
+
+
+  <div class="section section_bg" id="section9">
+        <div class="section-title text-center">
+                <h5 class="title-bg">CONSULTAS</h5>
+        </div>
     <div class="intro">
-        <h1>Scroll Down Last 8</h1>
+        <h1>Scroll Down Last 9</h1>
     </div>
   </div>
 
-  <div class="section section_bg" id="section9">
+
+  <div class="section section_bg" id="section10">
         <div class="section-title text-center">
                 <h5 class="title-bg">TCL</h5>
         </div>
@@ -1027,7 +1364,7 @@
     </div>
   </div>
 
-  <div class="section section_bg" id="section10">
+  <div class="section section_bg" id="section11">
         <div class="section-title text-center">
                 <h5 class="title-bg">ALG.RELACIONAL</h5>
         </div>
@@ -1037,7 +1374,7 @@
   </div>
 
 
-  <div class="section section_bg" id="section11">
+  <div class="section section_bg" id="section12">
         <div class="section-title text-center">
                 <h5 class="title-bg">PLSQL</h5>
         </div>
@@ -1063,7 +1400,7 @@
   </div>
 
 
-  <div class="section section_bg" id="section12">
+  <div class="section section_bg" id="section13">
         <div class="section-title text-center">
             <h5 class="title-bg">ATIVIDADES</h5>
         </div>       
@@ -1446,6 +1783,37 @@
         </div>
 
 
+        <div class="slide" id="slide1220">
+                <div class="intro">
+                        <h3>Scripts DDL</h3>
+                        <p class="font_menor">                                            
+                            
+                            <a href="sqls/01_post_Categoria.sql" target="_blank">01_post_Categoria.sql</a>  <br/> 
+                            <a href="sqls/02_disciplinas.sql" target="_blank">02_disciplinas.sql</a>    <br/>
+                            <a href="sqls/03_soe_edificios.sql" target="_blank">03_soe_edificios.sql</a>    <br/>
+                            <a href="sqls/04_SBSI.sql" target="_blank">04_SBSI.sql</a>    <br/>
+                            <a href="sqls/05_academico.sql" target="_blank">05_academico.sql</a>    <br/>
+                            <a href="sqls/06_banco-filmes-postgresql.sql" target="_blank">06_banco-filmes-postgresql.sql</a>    <br/>
+                            <a href="sqls/07_AEmpresa.sql" target="_blank">07_AEmpresa.sql</a>    <br/>
+                            <a href="sqls/08_biblioteca.sql" target="_blank">08_biblioteca.sql</a>    <br/>
+                            <a href="sqls/08_netflix.sql" target="_blank">08_netflix.sql</a>    <br/>
+                            <a href="sqls/aa.sql" target="_blank">biblia.sql</a>    <br/>
+                            <a href="sqls/09_categorias.sql" target="_blank">categorias.sql</a>  <br/>  
+                            <a href="sqls/10_HospitalEspanhol.sql" target="_blank">10_HospitalEspanhol.sql</a>    <br/>
+                            <a href="sqls/11_customer.sql" target="_blank">11_customer.sql</a>    <br/>
+                            <a href="sqls/12_dados-iniciais.sql" target="_blank">12_dados-iniciais.sql</a>    <br/>
+                            <a href="sqls/13_DadosPadrao.sql" target="_blank">13_DadosPadrao.sql</a>    <br/>
+                            <a href="sqls/14_ERBDSQL_TABS2.sql" target="_blank">14_ERBDSQL_TABS2.sql</a>    <br/>
+                            <a href="sqls/15_escola.sql" target="_blank">15_escola.sql</a>    <br/>
+                            <a href="sqls/16_locadora_insercao.sql" target="_blank">16_locadora_insercao.sql</a> <br/>   
+                            <a href="sqls/17_schema_pedido.sql" target="_blank">17_schema_pedido.sql</a> <br/>
+                            <a href="sqls/18_livraria.sql" target="_blank">18_livraria.sql</a>    <br/>
+                        </p>
+                </div>
+            </div>
+    
+
+
 
   </div>
 
@@ -1458,11 +1826,11 @@
 <script type="text/javascript">
   $(document).ready(function() {
       $('#fullpage').fullpage({
-        anchors: ['firstPage', 'secondPage', '3rdPage', '4rdpage','5rdPage','6rdPage','7rdPage','8rdPage','9rdPage','10rdPage','11rdPage', 'lastPage'],
+        anchors: ['firstPage', 'secondPage', '3rdPage', '4rdpage','5rdPage','6rdPage','7rdPage','8rdPage','81rdPage','9rdPage','10rdPage','11rdPage', 'lastPage'],
         menu: '#menu',
 				'navigation': true,
 				'navigationPosition': 'right',
-				'navigationTooltips': ['firstPage', 'secondPage', '3rdPage', '4rdpage','5rdPage','6rdPage','7rdPage','8rdPage','9rdPage','10rdPage','11rdPage', 'lastPage'],
+				'navigationTooltips': ['firstPage', 'secondPage', '3rdPage', '4rdpage','5rdPage','6rdPage','7rdPage','8rdPage','81rdPage','9rdPage','10rdPage','11rdPage', 'lastPage'],
 
 				'afterLoad': function(anchorLink, index){
 					if(index == 2){

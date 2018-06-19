@@ -13,6 +13,7 @@
       "der":"DER",
       "ddl":"DDL",
       "dml":"DML",
+      "query":"CONSULTA",
       "tcl":"TCL",
       "plsql":"PLSQL",
       "relational":"Relacional",

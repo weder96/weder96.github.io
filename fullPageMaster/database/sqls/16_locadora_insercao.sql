@@ -1,9 +1,4 @@
 --script para insercao noo banco de dados locadora
---adaptado do material da prof Maria Camila Barioni - FACOM - UFU
-
-SET search_path TO locadora;
-SET datestyle TO 'DMY';
-
 
 INSERT INTO CLIENTE VALUES (1, 'João José da Silva', 'Rua das Dores, 1687, Ipiranga', '(91) 3524-4651', '(91) 9254-4651');
 INSERT INTO CLIENTE VALUES (2, 'Maria Joaquina Magalhães', 'Av. Litorânia, 5484, Praia do Morro', '(28) 3842-9741', '(28) 9954-9741');

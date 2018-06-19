@@ -4,7 +4,7 @@
 -- O objetivo desta aula pratica eh trabalhar com as diversas possibilidades de
 -- consultas e atualizacoes em SQL
 --
--- Para tanto, sera utilizado o banco de dados Acadêmico (alunos, disciplinas, historico)
+-- Para tanto, sera utilizado o banco de dados Acadï¿½mico (alunos, disciplinas, historico)
 --
 -- Este arquivo contem a criacao das tabelas e a insercao de registros em numero
 -- suficiente para as diversas questoes da aula pratica.
