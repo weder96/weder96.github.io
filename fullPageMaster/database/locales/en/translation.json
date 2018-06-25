@@ -12,9 +12,9 @@
       "mer":"MER",
       "der":"DER",
       "ddl":"DDL",
-      "query":"QUERY",
+      "query":"DQL",
       "dml":"DML",
-      "tcl":"TCL",
+      "tcl":"TCC",
       "plsql":"PLSQL",
       "relational":"Relational",
       "activies":"Activies"
