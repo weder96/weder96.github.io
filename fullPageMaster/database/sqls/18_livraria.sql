@@ -152,8 +152,6 @@ INSERT INTO AUTOR(matricula, cpf, datanasc, nome, nacionalidade) VALUES(116, 890
 INSERT INTO AUTOR(matricula, cpf, datanasc, nome, nacionalidade) VALUES(117, 780007, '1959-05-24 00:00:00', 'Carlos Tenório', 'Equatoriana');
 INSERT INTO AUTOR(matricula, cpf, datanasc, nome, nacionalidade) VALUES(118, 770008, '1960-11-29 00:00:00', 'Maria Fonseca', 'Brasileira');
 
-select * from autor
-
 --TABELA LIVRO_AUTORIA
 
 INSERT INTO LIVRO_AUTORIA(livro_id, autor_id) VALUES(1,1);
@@ -176,12 +174,7 @@ INSERT INTO CARTAO(ID, tipocartao) VALUES(3, 'GOLD');
 INSERT INTO CARTAO(ID, tipocartao) VALUES(4, 'GOLD PLUS');
 
 
-
-
-
 --TABELA CLIENTE
-
-
 INSERT INTO Cliente_v(cpf, datanasc, nome, nacionalidade,CARTAO_ID) VALUES(920003, '1981-11-12 00:00:00', 'Ana Escobar', 'Colombiana',1);          
 INSERT INTO Cliente_v(cpf, datanasc, nome, nacionalidade,CARTAO_ID) VALUES(890006, '1979-08-13 00:00:00', 'Carla Silva', 'Brasileira',1);         
 INSERT INTO Cliente_v(cpf, datanasc, nome, nacionalidade,CARTAO_ID) VALUES(890106, '1979-08-15 00:00:00', 'João Inácio Magalhães', 'Brasileira',2);    
@@ -194,14 +187,10 @@ INSERT INTO Cliente_v(cpf, datanasc, nome, nacionalidade,CARTAO_ID) VALUES(89070
 INSERT INTO Cliente_v(cpf, datanasc, nome, nacionalidade,CARTAO_ID) VALUES(890806, '1971-08-08 00:00:00', 'Marco Antônio Rossi', 'Brasileira',2);
 
 
-select * from Cliente_v
-
 --TABELA LOJA
 INSERT INTO LOJA(cnpj, nome) VALUES(99991, 'Tabajara 1');
 INSERT INTO LOJA(cnpj, nome) VALUES(99992, 'Tabajara 2');
 
-
-select * from loja
 --TABELA VENDA
 
 INSERT INTO VENDA(idvenda, quantidade, total, datavenda, loja_id, livro_id, cliente_id) VALUES(1,1,31.20,'2008-06-02 00:00:00',1,1,1);

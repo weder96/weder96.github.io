@@ -55,7 +55,7 @@
     <li class="nav-item" data-menuanchor="firstPage" class="active"><a href="#firstPage"><i class="fa fa-home fa-space icon"></i>     <span data-i18n="nav.home"></span></a></li>
     <li class="nav-item" data-menuanchor="secondPage"><a href="#secondPage"><i class="fa fa-arrow-alt-circle-right fa-space icon"></i><span data-i18n="nav.intro"></span></a></li>
     <li class="nav-item" data-menuanchor="3rdPage">   <a href="#3rdPage"><i class="fa fa-database fa-space icon"></i>                 <span  data-i18n="nav.database"></span></a></li>
-    <li class="nav-item" data-menuanchor="4rdpage">   <a href="#4thpage"><i class="fa fa-desktop fa-space icon"></i>                  <span data-i18n="nav.project"></span></a></li>
+    <li class="nav-item" data-menuanchor="4rdpage">   <a href="#4rdpage"><i class="fa fa-desktop fa-space icon"></i>                  <span data-i18n="nav.project"></span></a></li>
     <li class="nav-item" data-menuanchor="5rdPage">   <a href="#5rdPage"><i class="fa fa-chart-line fa-space icon"></i>               <span data-i18n="nav.mer"></span></a></li>
     <li class="nav-item" data-menuanchor="6rdPage">   <a href="#6rdPage"><i class="fas fa-plug fa-space icon"></i>                    <span data-i18n="nav.der"></span></a></li>
     <li class="nav-item" data-menuanchor="7rdPage">   <a href="#7rdPage"><i class="fa fa-handshake fa-space icon"></i>                <span data-i18n="nav.ddl"></span></a></li>
@@ -137,10 +137,10 @@
         <div class="slide" id="slide13">
                 <div class="intro">
                     <h3>Sistemas de arquivos</h3>
-                    <h3>Banco de dados com modelo hierárquico</h3>
-                    <h3>Banco de dados com modelo de rede</h3>
-                    <h3>Banco de dados com modelo relacional</h3>
-                    <h3>Bancos de dados com modelo orientado a objetos</h3>
+                    <h3>Banco de dados com Modelo hierárquico</h3>
+                    <h3>Banco de dados com Modelo de rede</h3>
+                    <h3>Banco de dados com Modelo relacional</h3>
+                    <h3>Bancos de dados com Modelo orientado a objetos</h3>
                     <h3>Bancos de dados NOSQL</h3>
                     <h3>Bancos de dados NewSQL</h3>
                     <p>A utilização dos modelos apresentados foi possível por meio da utilização de sistemas que facilitassem o acesso aos dados e fossem capazes de manipular essas informações, implementando as regras de cada modelo. Cada um desses sistemas é chamado de Sistema de Gerenciamento de Banco de Dados (SGBD).</p>
@@ -1350,9 +1350,398 @@
         <div class="section-title text-center">
                 <h5 class="title-bg">CONSULTAS</h5>
         </div>
-    <div class="intro">
-        <h1>Scroll Down Last 9</h1>
-    </div>
+
+                <div class="slide" id="slide91">
+                    <div class="intro">
+                        <h3>QUERY -> SELECT </h3>                
+                        <p>
+                            Temos um banco de dados chamado LIVRARIA<br/>
+                            O mesmo possui N tabelas entre ela a de AUTOR<br/>
+                            Queremos listar os dados desta tabela<br/>
+                            <span class="comandsql">CMD:</span>SELECT * FROM <b>NOME_DA_TABELA</b>
+                            <br/>
+                            <span class="comandsql">CMD:</span>SELECT * FROM <b>AUTOR</b>
+                            <br/>
+                            <img src="imgs/select01.png"></img>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="slide" id="slide92">
+                    <div class="intro">
+                        <h3>QUERY -> SELECT -> DEFINE FIELDS(CAMPOS)</h3>
+                        <p>
+                            <span class="comandsql">CMD:</span>SELECT ID, CPF, NOME  FROM <b>AUTOR</b>
+                            <br/>
+                            <img src="imgs/select02.png"></img>
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="slide" id="slide93">
+                    <div class="intro">
+                        <h3>QUERY -> SELECT -> CLÁUSULA WHERE </h3>
+                        <p>
+                            <span class="comandsql">CMD:</span>SELECT *  FROM <b>AUTOR</b> WHERE ID > 7 <br/>
+                            <br/>
+                            <img src="imgs/select03.png"></img>
+                            <br/>
+                            <br/>
+                            <span class="comandsql">CMD:</span>SELECT *  FROM <b>AUTOR</b> WHERE ID > 7 and matricula=116<br/>
+                            <br/>
+                            <img src="imgs/select04.png"></img>
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="slide" id="slide94">
+                    <div class="intro">
+                        <h3>QUERY -> SELECT -> LIKE -> NOT LIKE </h3>
+                        <p>
+                            --busca todos os nomes que possui Carla(Não Importa em que local do Texto- %)<br/>
+                            <span class="comandsql">CMD:</span> select * from autor where nome like '%Carla%' <br/>
+
+                            --busca todos os nomes que possui Inicio Carla(Somente que inicia com Carla- %)<br/>
+                            <span class="comandsql">CMD:</span> select * from autor where nome like 'Car%' <br/>
+
+                            --busca todos os nomes que possui Termina Carla(Somente que Termina com Silva- %)<br/>
+                            <span class="comandsql">CMD:</span> select * from autor where nome like '%Silva' <br/>
+
+                            --busca todos os nomes que Segunda Letra e um A <br/>                           
+                            <span class="comandsql">CMD:</span> select * from autor where nome like '_a%' <br/>
+
+                            --busca todos os nomes que Segunda Letra e um Ma e possui uma parte com Fon<br/>
+                            <span class="comandsql">CMD:</span> select * from autor where nome like 'Ma%Fon%' <br/>
+
+                            --busca todos os nomes que SIMILAR TO<br/>
+                            <span class="comandsql">CMD:</span> select * from autor where nome similar to 'Ma%Fon%' <br/>
+                            
+                            ~~ is equivalent to LIKE<br/>
+                            ~~* is equivalent to ILIKE(not case sensitive)<br/>
+                            !~~ is equivalent to NOT LIKE<br/>
+                            !~~* is equivalent to NOT ILIKE(not case sensitive)<br/>
+                            
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="slide" id="slide95">
+                    <div class="intro">
+                        <h3>QUERY -> SELECT -> STRING </h3>
+                        <p>
+                                <span class="comandsql">CMD:</span> select 'Post' || 'greSQL' 	--PostgreSQL <br/>
+                                <span class="comandsql">CMD:</span> select char_length('jose') --4 	 <br/>
+                                <span class="comandsql">CMD:</span> select lower('TOM') --tom <br/>
+                                <span class="comandsql">CMD:</span> select position('om' in 'Thomas') --3 <br/>
+                                <span class="comandsql">CMD:</span> select substring('Thomas' from 2 for 3) -- hom  <br/>
+                                <span class="comandsql">CMD:</span> select substring('Thomas' from '...$') 	--mas <br/>
+                                <span class="comandsql">CMD:</span> select substring('Thomas' from '%#"o_a#"_' for '#') 	--oma <br/>
+                                <span class="comandsql">CMD:</span> select trim(both 'xyz' from 'yxTomxx') 	--Tom <br/>
+                                <span class="comandsql">CMD:</span> select trim(both from 'yxTomxx', 'xyz') --Tom <br/>
+                                <span class="comandsql">CMD:</span> select upper('tom') --TOM <br/>
+                            
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="slide" id="slide96">
+                    <div class="intro">
+                            <h3>QUERY -> SELECT -> STRING 2 </h3>
+                        <p>
+                                <span class="comandsql">CMD:</span> select concat('abcde', 2, NULL, 22) --abcde222 <br/>
+                                <span class="comandsql">CMD:</span> select lpad('hi', 5, 'xy')  --xyxhi <br/>
+                                <span class="comandsql">CMD:</span> select ltrim('zzzytest', 'xyz') -- test <br/>
+                                <span class="comandsql">CMD:</span> select md5('123456')  --e10adc3949ba59abbe56e057f20f883e <br/>
+                                <span class="comandsql">CMD:</span> select quote_literal(42.5) '42.5' <br/>
+                                <span class="comandsql">CMD:</span> select regexp_replace('Thomas', '.[mN]a.', 'M')  --ThM <br/>
+                                <span class="comandsql">CMD:</span> select repeat('Pg', 4) 	--PgPgPgPg <br/>
+                                <span class="comandsql">CMD:</span> select replace('abcdefabcdef', 'cd', 'XX') 	--abXXefabXXef <br/>
+                                <span class="comandsql">CMD:</span> select reverse('abcde') 	--edcba <br/>
+                                <span class="comandsql">CMD:</span> select right('abcde', 2) 	--de <br/>
+                                <span class="comandsql">CMD:</span> select rpad('hi', 5, 'xy') 	--hixyx <br/>
+                                <span class="comandsql">CMD:</span> select rtrim('testxxzx', 'xyz') 	--test <br/>
+                                <span class="comandsql">CMD:</span> select split_part('abc~@~def~@~ghi', '~@~', 2) 	--def <br/>
+                                <span class="comandsql">CMD:</span> select strpos('high', 'ig') 	--2 <br/>
+                                <span class="comandsql">CMD:</span> select substr('alphabet', 3, 2) --ph <br/>
+                                <span class="comandsql">CMD:</span> select translate('12345', '143', 'ax')  --a2x5 	 <br/>
+                                <span class="comandsql">CMD:</span> select quote_literal(E'O\'Reilly')  --'O''Reilly' <br/>
+                        </p>
+                    </div>
+                </div>
+
+
+
+                <div class="slide" id="slide97">
+                    <div class="intro">
+                        <h3>QUERY -> SELECT -> CONSTANTES E OPERADORES</h3>
+                        <p>
+                                Operator/Element 	            Associativity 	    Description<br/>
+                                . 	                            left 	            table/column name separator<br/>
+                                :: 	                            left 	            PostgreSQL-style typecast<br/>
+                                [ ] 	                        left 	            array element selection<br/>
+                                + - 	                        right 	            unary plus, unary minus<br/>
+                                ^ 	                            left 	            exponentiation<br/>
+                                * / % 	                        left 	            multiplication, division, modulo<br/>
+                                + - 	                        left 	            addition, subtraction<br/>
+                                (any other operator) 	        left 	            all other native and user-defined operators<br/>
+                                BETWEEN IN LIKE ILIKE SIMILAR 	range containment, set membership, string matching<br/>
+                                < > = <= >= <> 	  	            comparison operators<br/>
+                                IS ISNULL NOTNULL 	  	IS TRUE, IS FALSE, IS NULL, IS DISTINCT FROM, etc<br/>
+                                NOT 	                        right 	            logical negation<br/>
+                                AND 	                        left 	            logical conjunction<br/>
+                                OR 	                            left 	            logical disjunction<br/>
+                            
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="slide" id="slide98">
+                    <div class="intro">
+                        <h3>QUERY -> SELECT -> OPERADORES</h3>
+                        <p>
+                                <span class="comandsql">CMD:</span>  SELECT 5! --120<br/>
+                                <span class="comandsql">CMD:</span>  SELECT 2+2  --4<br/>
+                                <span class="comandsql">CMD:</span>  SELECT 3*2  --6<br/>
+                                <span class="comandsql">CMD:</span>  SELECT 3^2::numeric(13,2)  --9<br/>
+                                <span class="comandsql">CMD:</span>  SELECT 9%2  --1<br/>
+                                <span class="comandsql">CMD:</span>  SELECT 9/3  --3 <br/>
+                                <span class="comandsql">CMD:</span>  SELECT 3*(3+2) --15<br/>
+                                <span class="comandsql">CMD:</span>  SELECT 3>2  --true<br/>
+                                <span class="comandsql">CMD:</span>  SELECT 3<=2  --false<br/>
+                                <span class="comandsql">CMD:</span>  SELECT 3<>3  --false<br/> 
+
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="slide" id="slide99">
+                    <div class="intro">
+                        <h3>QUERY -> SELECT ->AGRUPAMENTO</h3>
+                        <p>
+                                avg(expressão)<br/>
+                                count(*) <br/>                               
+                                count(expressão)                                 <br/>
+                                max(expressão)                                 <br/>
+                                min(expressão)                                 <br/>
+                                stddev(expressão)                                 <br/>
+                                sum(expressão)                                 <br/>
+                                variance(expressão)<br/>
+                                Onde expressão, pode ser "ALL expressão" ou “DISTINCT expressão”.<br/>
+                                **Todas vez que usar as funções acima e necesario colocar os campo, que estao fora delas no group by
+                                
+                        </p>
+                    </div>
+                </div>
+
+                <div class="slide" id="slide910">
+                        <div class="intro">
+                            <h3>QUERY -> SELECT ->AGRUPAMENTO</h3>
+                            <p>                                    
+                                    <span class="comandsql">CMD:</span>  select count(*) as qtd from autor<br/>
+                                    <span class="comandsql">CMD:</span>  select count(*), nacionalidade from autor group by nacionalidade<br/>
+                                    <span class="comandsql">CMD:</span>  select count(*), nacionalidade from autor group by 2<br/>
+                                    <span class="comandsql">CMD:</span>  select max(id) as maior from autor<br/>
+                                    <span class="comandsql">CMD:</span>  select min(id) as menor from autor<br/>
+                                    <span class="comandsql">CMD:</span>  select avg(matricula) as media from autor<br/>
+                                    <span class="comandsql">CMD:</span>  select sum(id) as media from autor<br/>
+                                    <span class="comandsql">CMD:</span>  select variance(id) as media from autor<br/>
+                                    <span class="comandsql">CMD:</span>  select distinct * from livro<br/>
+                            </p>
+                        </div>
+                </div>
+
+                <div class="slide" id="slide911">
+                        <div class="intro">
+                            <h3>QUERY -> SELECT ->AGRUPAMENTO - HAVING </h3>
+                            <p>                                    
+                                    <span class="comandsql">CMD:</span>
+                                    <b>select<b/> idvenda, sum(quantidade) as qtd, sum(total) as total <br/>
+                                    <b>from<b/> venda <br/>
+                                    <b>group by<b/> idvenda <br/>
+                                    <b>having<b/> sum(total)>300 <br/>
+                                    <b>order<b/> by idvenda  <br/>
+                                    <br/>
+                                    **O having funciona como o where do Group by.
+                            </p>
+                        </div>
+                </div>
+
+
+                <div class="slide" id="slide912">
+                        <div class="intro">
+                            <h3>QUERY -> SELECT ->AGRUPAMENTO -> ROW_NUMBER</h3>
+                            <p>                                    
+                                    <span class="comandsql">CMD:</span>  select  *, ROW_NUMBER () OVER (ORDER BY id) from venda<br/>
+                                    --Sem Usar o Group by <br/>
+                                    <span class="comandsql">CMD:</span>  select distinct sum(total)over (partition by idvenda), idvenda, cliente_id from venda<br/>
+                            </p>
+                        </div>
+                </div>
+
+
+
+                <div class="slide" id="slide913">
+                        <div class="intro">
+                            <h3>QUERY -> SELECT -> SUBSELECT</h3>
+                            <p>                                    
+                                    <span class="comandsql">CMD:</span>  
+                                    <b>select * from  <br/>
+                                    (select idvenda, sum(quantidade) as qtd, sum(total) as total  <br/>
+                                    from venda <br/>
+                                    <b>group by</b> idvenda <br/>
+                                    <b>order by</b> idvenda) as t1 <br/>
+                                    <b>where</b> total>=300 <br/>
+                            </p>
+                        </div>
+                </div>
+
+
+
+                <div class="slide" id="slide914">
+                        <div class="intro">
+                            <h3>QUERY -> SELECT -> IN</h3>
+                            <p>                                    
+                                    <span class="comandsql">CMD:</span>  
+                                    select * from venda where livro_id IN(4,5)   
+                            </p>
+                        </div>
+                </div>
+
+
+
+                <div class="slide" id="slide915">
+                        <div class="intro">
+                            <h3>QUERY -> SELECT -> WITH</h3>
+                            <p>    
+                                    <span class="comandsql">CMD:</span>  
+                                    <b>with</b> busca as ( <br/>
+                                        select * from venda where livro_id IN(4,5,1) <br/>
+                                        ) <br/>
+                                        select * from busca<br/>
+                                    
+                            </p>
+                        </div>
+                </div>
+
+
+
+                <div class="slide" id="slide916">
+                        <div class="intro">
+                            <h3>QUERY -> SELECT -> CREATE VIEW </h3>
+                            <p>    
+                                    <span class="comandsql">CMD:</span>  
+                                    create or replace view busca as<br/>
+                                    select * from venda where livro_id IN(4,5,1)<br/>
+
+                                    <br/>
+                                    <br/>                                
+                                    <span class="comandsql">CMD:</span>      
+                                    select * from busca                                                                                                        
+                            </p>
+                        </div>
+                </div>
+
+
+                <div class="slide" id="slide917">
+                        <div class="intro">
+                                <h3>QUERY -> SELECT -> DROP VIEW </h3>
+                            <p>                                    
+                                    <span class="comandsql">CMD:</span>  
+                                    drop view busca
+                            </p>
+                        </div>
+                </div>
+
+
+                <div class="slide" id="slide918">
+                        <div class="intro">
+                            <h3>QUERY -> SELECT -> FIELD -> JSON</h3>
+                            <p>   
+                                    -- Simple scalar/primitive value<br/>
+                                    -- Primitive values can be numbers, quoted strings, true, false, or null<br/>
+                                    <span class="comandsql">CMD:</span>  SELECT '5'::json;<br/>
+                                    
+                                    -- Array of zero or more elements (elements need not be of same type)<br/>
+                                    <span class="comandsql">CMD:</span>  SELECT '[1, 2, "foo", null]'::json;<br/>
+                                    
+                                    -- Object containing pairs of keys and values<br/>
+                                    -- Note that object keys must always be quoted strings<br/>
+                                    <span class="comandsql">CMD:</span>  SELECT '{"bar": "baz", "balance": 7.77, "active": false}'::json;<br/>
+                                    
+                                    -- Arrays and objects can be nested arbitrarily<br/>
+                                    <span class="comandsql">CMD:</span>  SELECT '{"foo": [true, "bar"], "tags": {"a": 1, "b": null}}'::json;<br/>
+                                                                     
+                                    
+                            </p>
+                        </div>
+                </div>
+
+                <div class="slide" id="slide919">
+                        <div class="intro">
+                            <h3>QUERY -> SELECT -> FIELD -> JSON</h3>
+                            <p>                                    
+                                    -- String exists as array element:<br/>
+                                    <span class="comandsql">CMD:</span>  SELECT '["foo", "bar", "baz"]'::jsonb ? 'bar';<br/>
+                                    
+                                    -- String exists as object key:<br/>
+                                    <span class="comandsql">CMD:</span>  SELECT '{"foo": "bar"}'::jsonb ? 'foo';<br/>
+                                    
+                                    -- Object values are not considered:<br/>
+                                    <span class="comandsql">CMD:</span>  SELECT '{"foo": "bar"}'::jsonb ? 'bar';  -- yields false<br/>
+                                    
+                                    -- As with containment, existence must match at the top level:<br/>
+                                    <span class="comandsql">CMD:</span>  SELECT '{"foo": {"bar": "baz"}}'::jsonb ? 'bar'; -- yields false<br/>
+                                    
+                                    -- A string is considered to exist if it matches a primitive JSON string:<br/>
+                                    <span class="comandsql">CMD:</span>  SELECT '"foo"'::jsonb ? 'foo';<br/>
+                                          
+                            </p>
+                        </div>
+                </div>
+
+                <div class="slide" id="slide920">
+                        <div class="intro">
+                            <h3>QUERY -> SELECT -> FIELD -> JSON ->CREATE</h3>
+                            <p>                                    
+                                    
+                                    <span class="comandsql">CMD:</span>  CREATE TABLE books ( id integer, data json );<br/>
+                                    <span class="comandsql">CMD:</span>  INSERT INTO books VALUES (1,'{ "name": "Book the First", "author": { "first_name": "Bob", "last_name": "White" } }');<br/>
+                                    <span class="comandsql">CMD:</span>  INSERT INTO books VALUES (2,'{ "name": "Book the Second", "author": { "first_name": "Charles", "last_name": "Xavier" } }');<br/>
+                                    <span class="comandsql">CMD:</span>  INSERT INTO books VALUES (3,'{ "name": "Book the Third", "author": { "first_name": "Jim", "last_name": "Brown" } }');<br/>
+
+                                
+                                    
+                            </p>
+                        </div>
+                </div>
+
+
+                <div class="slide" id="slide921">
+                        <div class="intro">
+                            <h3>QUERY -> SELECT -> FIELD -> JSON ->SELECT</h3>
+                            <p>                                    
+
+                                    <span class="comandsql">CMD:</span>  SELECT id, data->>'name' AS name FROM books;<br/>
+                                    <span class="comandsql">CMD:</span>  SELECT id, data->'author'->>'first_name' as author_first_name FROM books;<br/>
+                                    <span class="comandsql">CMD:</span>  SELECT * FROM books WHERE data->>'name' = 'Book the First';<br/>
+                                    <span class="comandsql">CMD:</span>  SELECT * FROM books WHERE data->'author'->>'first_name' = 'Charles';<br/>
+
+                                    Exercicios:<br/>
+                                    <a href="sqls/19_jsonEvents.sql" target="_blank">19_jsonEvents.sql</a>    <br/>
+                            </p>
+                        </div>
+                </div>
+
+
+
+
+
   </div>
 
 
@@ -1369,9 +1758,137 @@
         <div class="section-title text-center">
                 <h5 class="title-bg">ALG.RELACIONAL</h5>
         </div>
-    <div class="intro">
-        <h1>Scroll Down Last 10</h1>
-    </div>
+
+
+        <div class="slide" id="slide1100">
+                <div class="intro">
+                    <h3>QUERY -> ALG.RELACIONAL -> ESQUEMA</h3>
+                    <p>                                                                
+                            <br/>
+                            <img src="imgs/inner.jpg" width="800px" height="500px"><img>
+                    </p>
+                </div>
+        </div>
+
+        <div class="slide" id="slide1101">
+                <div class="intro">
+                    <h3>QUERY -> ALG.RELACIONAL -> </h3>
+                    <p>                                    
+                            São definidas nove operações para se trabalhar com álgebra relacional:<br/>
+                            <br/>
+                            Union –União;<br/>
+                            Intersection– Intersecção;<br/>
+                            Difference– Diferença, Subtração;<br/>
+                            Product – Produto, Produto Cartesiano.<br/>  
+                    </p>
+                </div>
+        </div>
+
+        <div class="slide" id="slide1102">
+                <div class="intro">
+                    <h3>QUERY -> ALG.RELACIONAL -> </h3>
+                    <p>                                    
+                            Estas quatro operações são provenientes da teoria de conjuntos, da matemática.<br/>
+                            <br/>
+                            Select– Seleção;(elemento citados no Select)<br/>
+                            Project– Projeção(elemento distintos que operador busca uma parte do todo);<br/>
+                            Join– Junção;<br/>
+                            Divide – Divisão. <br/>    
+                    </p>
+                </div>
+        </div>
+
+        <div class="slide" id="slide1103">
+                <div class="intro">
+                    <h3>QUERY -> ALG.RELACIONAL -> </h3>
+                    <p>                                    
+                            Aplicam-se especificamente ao modelo de dados relacional.
+                            Assignment– Designação, Atribuição.       
+                    </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide1104">
+                <div class="intro">
+                    <h3>QUERY -> ALG.RELACIONAL -> INNER JOIN</h3>
+                    <p>           
+                            <span class="comandsql">CMD:</span>                           
+                            select tb1.id, tb1.idvenda, tb1.livro_id, tb2.titulo from venda tb1
+                            <b>INNER JOIN</b> livro tb2 on tb1.livro_id = tb2.id 
+                    </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide1105">
+                <div class="intro">
+                    <h3>QUERY -> ALG.RELACIONAL -> LEFT JOIN </h3>
+                    <p>                                    
+                            <span class="comandsql">CMD:</span>                           
+                            select tb1.id, tb1.idvenda, tb1.livro_id, tb2.titulo from venda tb1
+                            <b>LEFT JOIN</b> livro tb2 on tb1.livro_id = tb2.id 
+                    </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide1106">
+                <div class="intro">
+                    <h3>QUERY -> ALG.RELACIONAL -> RIGHT JOIN</h3>
+                    <p>                                    
+                            <span class="comandsql">CMD:</span>                           
+                            select tb1.id, tb1.idvenda, tb1.livro_id, tb2.titulo from venda tb1
+                            <b>RIGHT JOIN </b> livro tb2 on tb1.livro_id = tb2.id 
+                    </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide1107">
+                <div class="intro">
+                    <h3>QUERY -> ALG.RELACIONAL -> FULL JOIN </h3>
+                    <p>                                    
+                            <span class="comandsql">CMD:</span>                           
+                            select tb1.id, tb1.idvenda, tb1.livro_id, tb2.titulo from venda tb1
+                            <b>FULL JOIN </b> livro tb2 on tb1.livro_id = tb2.id 
+                    </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide1108">
+                <div class="intro">
+                    <h3>QUERY -> ALG.RELACIONAL -> CROSS JOIN</h3>
+                    <p>                                    
+                            <span class="comandsql">CMD:</span>                           
+                            select tb1.id, tb1.idvenda, tb1.livro_id, tb2.titulo from venda tb1
+                            <b>CROSS JOIN </b> livro tb2  
+                    </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide1109">
+                <div class="intro">
+                    <h3>QUERY -> ALG.RELACIONAL -> </h3>
+                    <p>                                    
+                           
+                    </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide1110">
+                <div class="intro">
+                    <h3>QUERY -> ALG.RELACIONAL -> </h3>
+                    <p>                                    
+                            
+                    </p>
+                </div>
+        </div>
+
+
   </div>
 
 
@@ -1809,6 +2326,8 @@
                             <a href="sqls/16_locadora_insercao.sql" target="_blank">16_locadora_insercao.sql</a> <br/>   
                             <a href="sqls/17_schema_pedido.sql" target="_blank">17_schema_pedido.sql</a> <br/>
                             <a href="sqls/18_livraria.sql" target="_blank">18_livraria.sql</a>    <br/>
+                            <a href="sqls/19_jsonEvents.sql" target="_blank">19_jsonEvents.sql</a>    <br/>
+                            
                         </p>
                 </div>
             </div>
@@ -1827,7 +2346,7 @@
 <script type="text/javascript">
   $(document).ready(function() {
       $('#fullpage').fullpage({
-        anchors: ['firstPage', 'secondPage', '3rdPage', '4rdpage','5rdPage','6rdPage','7rdPage','8rdPage','81rdPage','9rdPage','10rdPage','11rdPage', 'lastPage'],
+                             anchors: ['firstPage', 'secondPage', '3rdPage', '4rdpage','5rdPage','6rdPage','7rdPage','8rdPage','81rdPage','9rdPage','10rdPage','11rdPage', 'lastPage'],
         menu: '#menu',
 				'navigation': true,
 				'navigationPosition': 'right',
