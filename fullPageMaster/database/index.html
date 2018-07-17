@@ -1739,6 +1739,224 @@
                 </div>
 
 
+                <div class="slide" id="slide922">
+                    <div class="intro">
+                        <h3>QUERY -> SELECT -> DATE -> TIMESTAMP -> TIME</h3>
+                        <p>                                    
+                            <span class="comandsql">CMD:</span>  select date '2001-09-28' + integer '7' 	--date '2001-10-05' <br/>
+                            <span class="comandsql">CMD:</span>  select date '2001-09-28' + interval '1 hour' 	--timestamp '2001-09-28 01:00:00' <br/>
+                            <span class="comandsql">CMD:</span>  select date '2001-09-28' + time '03:00' 	--timestamp '2001-09-28 03:00:00' <br/>
+                            <span class="comandsql">CMD:</span>  select interval '1 day' + interval '1 hour' 	--interval '1 day 01:00:00' <br/>
+                            <span class="comandsql">CMD:</span>  select timestamp '2001-09-28 01:00' + interval '23 hours' 	--timestamp '2001-09-29 00:00:00' <br/>
+                            <span class="comandsql">CMD:</span>  select time '01:00' + interval '3 hours' 	--time '04:00:00' <br/>
+                            <span class="comandsql">CMD:</span>  select	interval '23 hours' 	--interval '-23:00:00' <br/>
+                            <span class="comandsql">CMD:</span>  select date '2001-10-01' - date '2001-09-28' 	--integer '3' (days) <br/>
+                            <span class="comandsql">CMD:</span>  select date '2001-10-01' - integer '7' 	--date '2001-09-24' <br/>
+                            <span class="comandsql">CMD:</span>  select date '2001-09-28' - interval '1 hour' 	--timestamp '2001-09-27 23:00:00' <br/>
+                            <span class="comandsql">CMD:</span>  select time '05:00' - time '03:00' 	--interval '02:00:00' <br/>
+                            <span class="comandsql">CMD:</span>  select time '05:00' - interval '2 hours' 	--time '03:00:00' <br/>
+                            <span class="comandsql">CMD:</span>  select timestamp '2001-09-28 23:00' - interval '23 hours' 	--timestamp '2001-09-28 00:00:00' <br/>
+                            <span class="comandsql">CMD:</span>  select interval '1 day' - interval '1 hour' 	--interval '1 day -01:00:00' <br/>
+                            <span class="comandsql">CMD:</span>  select timestamp '2001-09-29 03:00' - timestamp '2001-09-27 12:00' 	--interval '1 day 15:00:00' <br/>
+                            <span class="comandsql">CMD:</span>  select 900 * interval '1 second' 	--interval '00:15:00' <br/>
+                            <span class="comandsql">CMD:</span>  select 21 * interval '1 day' 	--interval '21 days' <br/>
+                            <span class="comandsql">CMD:</span>  select double precision '3.5' * interval '1 hour' --	interval '03:30:00' <br/>
+                            <span class="comandsql">CMD:</span>  select interval '1 hour' / double precision '1.5' 	-- interval '00:40:00' <br/>
+                            
+                  
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="slide" id="slide923">
+                    <div class="intro">
+                        <h3>QUERY -> SELECT -> DATAS -> TIMESTAMP ->TIME</h3>
+                        <p>                                    
+                            <span class="comandsql">CMD:</span>  select age(timestamp '2001-04-10', timestamp '1957-06-13') 	--43 years 9 mons 27 days <br/>
+                            <span class="comandsql">CMD:</span>  select age(timestamp '1957-06-13') 	--43 years 8 mons 3 days <br/>
+                                        
+                            <span class="comandsql">CMD:</span>  select date_part('hour', timestamp '2001-02-16 20:38:40') 	--20 <br/>
+                            <span class="comandsql">CMD:</span>  select date_part('month', interval '2 years 3 months') 	--3 <br/>
+                            <span class="comandsql">CMD:</span>  select date_trunc('hour', timestamp '2001-02-16 20:38:40') 	--2001-02-16 20:00:00 <br/>
+                            <span class="comandsql">CMD:</span>  select date_trunc('hour', interval '2 days 3 hours 40 minutes') 	--2 days 03:00:00 <br/>
+                            <span class="comandsql">CMD:</span>  select extract(hour from timestamp '2001-02-16 20:38:40') 	--20 <br/>
+                            <span class="comandsql">CMD:</span>  select extract(month from interval '2 years 3 months') 	--3 <br/>
+                            <span class="comandsql">CMD:</span>  select isfinite(date '2001-02-16') 	--true <br/>
+                            <span class="comandsql">CMD:</span>  select isfinite(timestamp '2001-02-16 21:28:30') 	--true <br/>
+                            <span class="comandsql">CMD:</span>  select isfinite(interval '4 hours') 	--true <br/>
+                            <span class="comandsql">CMD:</span>  select justify_days(interval '35 days') 	--1 mon 5 days <br/>
+                            <span class="comandsql">CMD:</span>  select justify_hours(interval '27 hours') 	--1 day 03:00:00 <br/>
+                            <span class="comandsql">CMD:</span>  select justify_interval(interval '1 mon -1 hour') 	--29 days 23:00:00 <br/>
+                                                          
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="slide" id="slide924">
+                    <div class="intro">
+                        <h3>QUERY -> SELECT -> DATAS -> TIMESTAMP</h3>
+                        <p>                                    
+                            <span class="comandsql">CMD:</span>  select localtime -- time <br/>
+                            <span class="comandsql">CMD:</span>  select localtimestamp --now() <br/>
+                            
+                            <span class="comandsql">CMD:</span>  select make_date(2013, 7, 15) 	--2013-07-15 <br/>
+                            <span class="comandsql">CMD:</span>  select make_interval(days => 10) 	--10 days <br/>
+                            <span class="comandsql">CMD:</span>  select make_time(8, 15, 23.5) 	--08:15:23.5 <br/>
+                            <span class="comandsql">CMD:</span>  select make_timestamp(2013, 7, 15, 8, 15, 23.5) 	--2013-07-15 08:15:23.5 <br/>
+                            <span class="comandsql">CMD:</span>  select make_timestamptz(2013, 7, 15, 8, 15, 23.5) 	--2013-07-15 08:15:23.5+01 <br/>
+                            
+                            <span class="comandsql">CMD:</span>  select now() 	 	  	  <br/>
+                            <span class="comandsql">CMD:</span>  select statement_timestamp()  --now()	  	  <br/>
+                            <span class="comandsql">CMD:</span>  select timeofday()  	  	 --now() configuration <br/>
+                            <span class="comandsql">CMD:</span>  select transaction_timestamp()  	 --now() 	  <br/>
+                            <span class="comandsql">CMD:</span>  select to_timestamp(1284352323) 	--2010-09-13 04:32:03-00 <br/>
+                            
+                  
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="slide" id="slide925">
+                    <div class="intro">
+                        <h3>QUERY -> SELECT -> DATAS -> TIMESTAMP -> OVERLAPS</h3>
+                        <p>                 
+                            (start1, end1) OVERLAPS (start2, end2) <br/>
+                            (start1, length1) OVERLAPS (start2, length2) <br/>
+                            <br/>                          
+                            <span class="comandsql">CMD:</span>  SELECT (DATE '2001-02-16', DATE '2001-12-21') OVERLAPS (DATE '2001-10-30', DATE '2002-10-30'); <br/>
+                            Result: true                      <br/>
+                            <span class="comandsql">CMD:</span>  SELECT (DATE '2001-02-16', INTERVAL '100 days') OVERLAPS (DATE '2001-10-30', DATE '2002-10-30');                     <br/>
+                            Result: false <br/>
+                            <span class="comandsql">CMD:</span>  SELECT (DATE '2001-10-29', DATE '2001-10-30') overlaps (DATE '2001-10-30', DATE '2001-10-31'); <br/>
+                            Result: false <br/>
+                            <span class="comandsql">CMD:</span>  SELECT (DATE '2001-10-30', DATE '2001-10-30') overlaps (DATE '2001-10-30', DATE '2001-10-31'); <br/>
+                            Result: true <br/>
+                                                          
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="slide" id="slide926">
+                        <div class="intro">
+                            <h3>QUERY -> SELECT -> DATAS -> TIMESTAMP -> EXTRACT</h3>
+                            <p>                 
+
+                            <span class="comandsql">CMD:</span>  SELECT EXTRACT(EPOCH FROM timestamptz '2013-07-01 12:00:00') -
+                            EXTRACT(EPOCH FROM timestamptz '2013-03-01 12:00:00'); <br/>
+                            Result: 10540800
+                            <br/>
+                            <span class="comandsql">CMD:</span>  SELECT (EXTRACT(EPOCH FROM timestamptz '2013-07-01 12:00:00') -
+                                     EXTRACT(EPOCH FROM timestamptz '2013-03-01 12:00:00'))
+                                     / 60 / 60 / 24; <br/>
+                            Result: 122.0000 <br/>
+                             
+                            <span class="comandsql">CMD:</span>  SELECT timestamptz '2013-07-01 12:00:00' - timestamptz '2013-03-01 12:00:00'; <br/>
+                            Result: 122 days 00:00:00 <br/>
+                             
+                            <span class="comandsql">CMD:</span>  SELECT age(timestamptz '2013-07-01 12:00:00', timestamptz '2013-03-01 12:00:00'); <br/>
+                            Result: 4 mons <br/>
+                             
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="slide" id="slide927">
+                            <div class="intro">
+                                <h3>QUERY -> SELECT -> DATAS -> TIMESTAMP -> CENTURY</h3>
+                                <p>     
+                                        <span class="comandsql">CMD:</span> SELECT EXTRACT(CENTURY FROM TIMESTAMP '2000-12-16 12:21:13'); <br/>
+                                        Result: 20 <br/>
+                                        <span class="comandsql">CMD:</span> SELECT EXTRACT(CENTURY FROM TIMESTAMP '2018-02-16 20:38:40'); <br/>
+                                        Result: 21 <br/>                
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="slide" id="slide928">
+                                <div class="intro">
+                                    <h3>QUERY -> SELECT -> DATAS -> TIMESTAMP -> EXTRACT</h3>
+                                    <p>                         
+                                        <span class="comandsql">CMD:</span> SELECT EXTRACT(DAY FROM TIMESTAMP '2001-02-16 20:38:40');<br/>
+                                        Result: 16<br/>
+
+                                        <span class="comandsql">CMD:</span> SELECT EXTRACT(DAY FROM INTERVAL '40 days 1 minute');<br/>
+                                        Result: 40<br/>
+
+                                        <span class="comandsql">CMD:</span> SELECT EXTRACT(DECADE FROM TIMESTAMP '2001-02-16 20:38:40');<br/>
+                                        Result: 200<br/>                                        
+
+                                        <span class="comandsql">CMD:</span> SELECT EXTRACT(DOW FROM TIMESTAMP '2001-02-16 20:38:40');<br/>
+                                        Result: 5<br/>
+                                        
+                                        <span class="comandsql">CMD:</span> SELECT EXTRACT(DOY FROM TIMESTAMP '2001-02-16 20:38:40');<br/>
+                                        Result: 47<br/>
+
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="slide" id="slide929">
+                                    <div class="intro">
+                                        <h3>QUERY -> SELECT -> DATAS -> TIMESTAMP -> -> EPOCH</h3>
+                                        <p>    
+                                            
+                                        <span class="comandsql">CMD:</span> SELECT EXTRACT(EPOCH FROM TIMESTAMP WITH TIME ZONE '2001-02-16 20:38:40.12-08');<br/>
+                                        Result: 982384720.12<br/>
+
+                                        <span class="comandsql">CMD:</span> SELECT EXTRACT(EPOCH FROM INTERVAL '5 days 3 hours');<br/>
+                                        Result: 442800<br/>
+
+                                        <span class="comandsql">CMD:</span> SELECT to_timestamp(982384720.12);<br/>
+                                        Result: 2001-02-17 04:38:40.12+00<br/>
+
+
+                                        <span class="comandsql">CMD:</span> SELECT EXTRACT(HOUR FROM TIMESTAMP '2001-02-16 20:38:40');<br/>
+                                        Result: 20<br/>
+
+                                        <span class="comandsql">CMD:</span> SELECT EXTRACT(ISODOW FROM TIMESTAMP '2001-02-18 20:38:40');<br/>
+                                        Result: 7<br/>
+
+                                        <span class="comandsql">CMD:</span> SELECT EXTRACT(ISOYEAR FROM DATE '2006-01-01');<br/>
+                                        Result: 2005<br/>
+                                        
+                                        <span class="comandsql">CMD:</span> SELECT EXTRACT(ISOYEAR FROM DATE '2006-01-02');<br/>
+                                        Result: 2006<br/>
+            
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                                <div class="slide" id="slide930">
+                                        <div class="intro">
+                                            <h3>QUERY -> SELECT -> DATAS -> TIMESTAMP -> CURRENT</h3>
+                                            <p>                 
+                                                    <span class="comandsql">CMD:</span> SELECT CURRENT_TIME; <br/>
+                                                    Result: NOW()::TIME <br/>
+                                                    
+                                                    <span class="comandsql">CMD:</span> SELECT CURRENT_DATE; <br/>
+                                                    Result: NOW()::DATE <br/>
+                                                    
+                                                    <span class="comandsql">CMD:</span> SELECT CURRENT_TIMESTAMP; <br/>
+                                                    Result: NOW() <br/>
+                                                    
+                                                    <span class="comandsql">CMD:</span> SELECT CURRENT_TIMESTAMP(2); <br/>
+                                                    Result: NOW()::DD-MM-YYYY HH:MM:SS <br/>
+                                                    
+                                                    <span class="comandsql">CMD:</span> SELECT LOCALTIMESTAMP; <br/>
+                                                    Result: NOW()::DD-MM-YYYY HH:MM:SS <br/>
+                                            </p>
+                                        </div>
+                                    </div>
+    
+
 
 
 
@@ -1802,7 +2020,7 @@
                 <div class="intro">
                     <h3>QUERY -> ALG.RELACIONAL -> </h3>
                     <p>                                    
-                            Aplicam-se especificamente ao modelo de dados relacional.
+                            Aplicam-se especificamente ao modelo de dados relacional.<br/> 
                             Assignment– Designação, Atribuição.       
                     </p>
                 </div>
@@ -1815,7 +2033,8 @@
                     <p>           
                             <span class="comandsql">CMD:</span>                           
                             select tb1.id, tb1.idvenda, tb1.livro_id, tb2.titulo from venda tb1
-                            <b>INNER JOIN</b> livro tb2 on tb1.livro_id = tb2.id 
+                            <b>INNER JOIN</b> livro tb2 on tb1.livro_id = tb2.id <br/> <br/> 
+                            <img src="imgs/innersmall.png" width="250px" height="250px"><img>
                     </p>
                 </div>
         </div>
@@ -1827,7 +2046,22 @@
                     <p>                                    
                             <span class="comandsql">CMD:</span>                           
                             select tb1.id, tb1.idvenda, tb1.livro_id, tb2.titulo from venda tb1
-                            <b>LEFT JOIN</b> livro tb2 on tb1.livro_id = tb2.id 
+                            <b>LEFT JOIN</b> livro tb2 on tb1.livro_id = tb2.id <br/> <br/> 
+                            <img src="imgs/leftSmall.png" width="250px" height="250px"><img>
+                    </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide11051">
+                <div class="intro">
+                    <h3>QUERY -> ALG.RELACIONAL -> LEFT JOIN -> NULL</h3>
+                    <p>                                    
+                            <span class="comandsql">CMD:</span>                           
+                            select tb1.id, tb1.idvenda, tb1.livro_id, tb2.titulo from venda tb1
+                            <b>LEFT JOIN</b> livro tb2 on tb1.livro_id = tb2.id   <br/>
+                             WHERE tb2.id is null<br/> <br/> 
+                            <img src="imgs/leftSmallNull.png" width="250px" height="250px"><img>
                     </p>
                 </div>
         </div>
@@ -1839,7 +2073,23 @@
                     <p>                                    
                             <span class="comandsql">CMD:</span>                           
                             select tb1.id, tb1.idvenda, tb1.livro_id, tb2.titulo from venda tb1
-                            <b>RIGHT JOIN </b> livro tb2 on tb1.livro_id = tb2.id 
+                            <b>RIGHT JOIN </b> livro tb2 on tb1.livro_id = tb2.id <br/> <br/> 
+                            <img src="imgs/rigthSmall.png" width="250px" height="250px"><img>
+                    </p>
+                </div>
+        </div>
+
+
+
+        <div class="slide" id="slide11061">
+                <div class="intro">
+                    <h3>QUERY -> ALG.RELACIONAL -> RIGHT JOIN -> NULL</h3>
+                    <p>                                    
+                            <span class="comandsql">CMD:</span>                           
+                            select tb1.id, tb1.idvenda, tb1.livro_id, tb2.titulo from venda tb1
+                            <b>RIGHT JOIN </b> livro tb2 on tb1.livro_id = tb2.id   <br/>
+                            WHERE tb1.id is null <br/> <br/> 
+                            <img src="imgs/rightSmallNull.png" width="250px" height="250px"><img>
                     </p>
                 </div>
         </div>
@@ -1851,7 +2101,22 @@
                     <p>                                    
                             <span class="comandsql">CMD:</span>                           
                             select tb1.id, tb1.idvenda, tb1.livro_id, tb2.titulo from venda tb1
-                            <b>FULL JOIN </b> livro tb2 on tb1.livro_id = tb2.id 
+                            <b>FULL JOIN </b> livro tb2 on tb1.livro_id = tb2.id <br/> <br/> 
+                            <img src="imgs/fullSmall.png" width="250px" height="250px"><img>
+                    </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide11071">
+                <div class="intro">
+                    <h3>QUERY -> ALG.RELACIONAL -> FULL JOIN -> NULL </h3>
+                    <p>                                    
+                            <span class="comandsql">CMD:</span>                           
+                            select tb1.id, tb1.idvenda, tb1.livro_id, tb2.titulo from venda tb1
+                            <b>FULL JOIN </b> livro tb2 on tb1.livro_id = tb2.id  <br/> 
+                            WHERE tb1.id is null and tb2.id is null <br/> <br/> 
+                            <img src="imgs/fullSmallNull.png" width="250px" height="250px"><img>
                     </p>
                 </div>
         </div>
@@ -1863,27 +2128,8 @@
                     <p>                                    
                             <span class="comandsql">CMD:</span>                           
                             select tb1.id, tb1.idvenda, tb1.livro_id, tb2.titulo from venda tb1
-                            <b>CROSS JOIN </b> livro tb2  
-                    </p>
-                </div>
-        </div>
-
-
-        <div class="slide" id="slide1109">
-                <div class="intro">
-                    <h3>QUERY -> ALG.RELACIONAL -> </h3>
-                    <p>                                    
-                           
-                    </p>
-                </div>
-        </div>
-
-
-        <div class="slide" id="slide1110">
-                <div class="intro">
-                    <h3>QUERY -> ALG.RELACIONAL -> </h3>
-                    <p>                                    
-                            
+                            <b>CROSS JOIN </b> livro tb2   <br/> <br/> 
+                            <img src="imgs/cross.png" width="250px" height="250px"><img>
                     </p>
                 </div>
         </div>
@@ -1897,25 +2143,485 @@
                 <h5 class="title-bg">PLSQL</h5>
         </div>
 
-        <div class="slide" id="slide1011">
+        <div class="slide" id="slide1201">
                 <div class="intro">
-                    <h3>BREVE</h3>
+                    <h3>PLSQL -> VANTAGENS</h3>
                     <p> 
-
+                            SQL é a linguagem que o PostgreSQL e a maioria dos outros bancos de dados relacionais usam como linguagem de consulta. É portátil e fácil de aprender. Mas toda instrução SQL deve ser executada individualmente pelo servidor de banco de dados.
+                            <br/>
+                            Isso significa que seu aplicativo cliente deve enviar cada consulta para o servidor de banco de dados, aguardar que ele seja processado, receber e processar os resultados, fazer alguma computação e enviar mais consultas ao servidor. Tudo isso incorre em comunicação entre processos e também incorrerá em sobrecarga de rede se seu cliente estiver em uma máquina diferente do servidor de banco de dados.
+                            <br/>
+                            Com PL / pgSQL você pode agrupar um bloco de computação e uma série de consultas dentro do servidor de banco de dados, tendo assim o poder de uma linguagem procedural e a facilidade de uso do SQL, mas com considerável economia de sobrecarga de comunicação cliente / servidor.
+                            <br/>
+                            Viagens de ida e volta extras entre cliente e servidor são eliminadas
+                            <br/>
+                            Resultados intermediários que o cliente não precisa não precisam ser empacotados ou transferidos entre servidor e cliente
+                            <br/>
+                            Várias rodadas de análise de consulta podem ser evitadas
+                            <br/>
+                            Isso pode resultar em um aumento de desempenho considerável em comparação com um aplicativo que não usa funções armazenadas.
+                            <br/>
+                            Além disso, com o PL / pgSQL você pode usar todos os tipos de dados, operadores e funções do SQL.
+                            <br/>
+                            
                     </p>
                 </div>
         </div>
 
-        <div class="slide" id="slide1112">
+        <div class="slide" id="slide1202">
                 <div class="intro">
-                        <h3>BREVE</h3>
+                        <h3>PLSQL -> ESTRUTURA</h3>
                         <p>                        
+                                CREATE FUNCTION somefunc() RETURNS integer AS $$<br/>
+                                << outerblock >><br/>
+                                DECLARE<br/>
+                                    quantity integer := 30;<br/>
+                                BEGIN<br/>
+                                    RAISE NOTICE 'Quantity here is %', quantity;  -- Prints 30<br/>
+                                    quantity := 50;<br/>
+                                    --<br/>
+                                    -- Create a subblock<br/>
+                                    --<br/>
+                                    DECLARE<br/>
+                                        quantity integer := 80;<br/>
+                                    BEGIN<br/>
+                                        RAISE NOTICE 'Quantity here is %', quantity;  -- Prints 80<br/>
+                                        RAISE NOTICE 'Outer quantity here is %', outerblock.quantity;  -- Prints 50<br/>
+                                    END;<br/>
+
+                                    RAISE NOTICE 'Quantity here is %', quantity;  -- Prints 50<br/>
+
+                                    RETURN quantity;<br/>
+                                END;<br/>
+                                $$ LANGUAGE plpgsql;<br/>
+                                <br/>
+                                -- CALL<br/>
+                                select somefunc()<br/>
+                        </p>
+                </div>
+        </div>
+
+        <div class="slide" id="slide1203">
+                <div class="intro">
+                        <h3>PLSQL -> ALIAS</h3>
+                        <p>                        
+                                CREATE FUNCTION instr(varchar, integer) RETURNS integer AS $$<br/>
+                                DECLARE<br/>
+                                    v_string ALIAS FOR $1;<br/>
+                                    index ALIAS FOR $2;<br/>
+                                BEGIN<br/>
+                                    -- some computations using v_string and index here<br/>
+                                END;<br/>
+                                $$ LANGUAGE plpgsql;<br/>
+                        </p>
+                </div>
+        </div>
+
+        <div class="slide" id="slide1204">
+                <div class="intro">
+                        <h3>PLSQL -> Conditionals -> IF -> THEN -> ELSE -> END IF</h3>
+                        <p>                        
+                                IF ... THEN ... END IF<br/><br/>
+
+                                IF ... THEN ... ELSE ... END IF<br/><br/>
+                            
+                                IF ... THEN ... ELSIF ... THEN ... ELSE ... END IF<br/><br/>
+                            
+                             and two forms of CASE:<br/><br/>
+                            
+                                CASE ... WHEN ... THEN ... ELSE ... END CASE<br/><br/>
+                            
+                                CASE WHEN ... THEN ... ELSE ... END CASE<br/>
+                            
+                        </p>
+                </div>
+        </div>
+
+        <div class="slide" id="slide1205">
+                <div class="intro">
+                        <h3>PLSQL ->  EXCEPTION</h3>
+                        <p>  
+                            BEGIN<br/>
+                                y := x / 0;<br/>
+                            EXCEPTION<br/>
+                                WHEN division_by_zero THEN<br/>
+                                    NULL;  -- ignore the error<br/>
+                            END; <br/>                     
+                        </p>
+                </div>
+        </div>
+
+        <div class="slide" id="slide1206">
+                <div class="intro">
+                        <h3>PLSQL ->  LOOP</h3>
+                        <p>                        
+                            LOOP<br/>
+                                -- some computations<br/>
+                                IF count > 0 THEN<br/>
+                                    EXIT;  -- exit loop<br/>
+                                END IF;<br/>
+                            END LOOP;<br/>
+                            <br/>
+                            LOOP<br/>
+                                -- some computations<br/>
+                                EXIT WHEN count > 0;  -- same result as previous example<br/>
+                            END LOOP;<br/>
+                            <br/>
+                        </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide1207">
+                <div class="intro">
+                        <h3>PLSQL ->  WHILE</h3>
+                        <p>                        
+                            <<label>> <br/>
+                            WHILE boolean-expression LOOP<br/>
+                                statements<br/>
+                            END LOOP [ label ];<br/>
+
+                            WHILE NOT done LOOP<br/>
+                            -- some computations here<br/>
+                            END LOOP;<br/>
+                        </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide1208">
+                <div class="intro">
+                        <h3>PLSQL ->  FOR</h3>
+                        <p>  
+                        [ <<label>><br/>
+                        FOR name IN [ REVERSE ] expression .. expression [ BY expression ] LOOP<br/>
+                            statements<br/>
+                        END LOOP [ label ];<br/>                      
+
+                        FOR i IN 1..10 LOOP<br/>
+                            -- i will take on the values 1,2,3,4,5,6,7,8,9,10 within the loop<br/>
+                        END LOOP;<br/>
+
+                        FOR i IN REVERSE 10..1 LOOP<br/>
+                            -- i will take on the values 10,9,8,7,6,5,4,3,2,1 within the loop<br/>
+                        END LOOP;<br/>
+
+                        FOR i IN REVERSE 10..1 BY 2 LOOP<br/>
+                            -- i will take on the values 10,8,6,4,2 within the loop<br/>
+                        END LOOP;<br/>
+
+                        </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide1209">
+                <div class="intro">
+                        <h3>PLSQL ->  FOR</h3>
+                        <p>                        
+                                <<label>> ]<br/>
+                                FOR target IN query LOOP<br/>
+                                    statements<br/>
+                                END LOOP [ label ]<br/>
+                        </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide1210">
+                <div class="intro">
+                        <h3>PLSQL ->  RECORD</h3>
+                        <p>   
+                            
+                        CREATE FUNCTION cs_refresh_mviews() RETURNS integer AS $$<br/>
+                        DECLARE<br/>
+                            mviews RECORD;<br/>
+                        BEGIN<br/>
+                            RAISE NOTICE 'Refreshing materialized views...';<br/>
+                        
+                            FOR mviews IN SELECT * FROM cs_materialized_views ORDER BY sort_key LOOP<br/>
+                            <br/>
+                                -- Now "mviews" has one record from cs_materialized_views<br/>
+                                <br/>
+                                RAISE NOTICE 'Refreshing materialized view %s ...', quote_ident(mviews.mv_name);<br/>
+                                EXECUTE format('TRUNCATE TABLE %I', mviews.mv_name);<br/>
+                                EXECUTE format('INSERT INTO %I %s', mviews.mv_name, mviews.mv_query);<br/>
+                            END LOOP;<br/>
+                        
+                            RAISE NOTICE 'Done refreshing materialized views.';<br/>
+                            RETURN 1;<br/>
+                        END;<br/>
+                        $$ LANGUAGE plpgsql;<br/>
+                        <br/>
+                        </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide1211">
+                <div class="intro">
+                        <h3>PLSQL ->  EXECUTE</h3>
+                        <p>                        
+                                [<<label>> ]<br/>
+                                 FOR target IN EXECUTE text_expression [ USING expression [, ... ] ] LOOP<br/>
+                                      statements<br/>
+                                 END LOOP [ label ];<br/>
+                        </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide1212">
+                <div class="intro">
+                        <h3>PLSQL ->  CURSOR</h3>
+                        <p>                        
+                            DECLARE<br/>
+                                key integer;<br/>
+                                curs4 CURSOR FOR SELECT * FROM tenk1 WHERE unique1 = key;<br/>
+                            BEGIN<br/>
+                                key := 42;<br/>
+                                OPEN curs4;<br/>
+                        </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide1213">
+                <div class="intro">
+                        <h3>PLSQL ->  CURSOR</h3>
+                        <p>                        
+                                CREATE TABLE test (col text);<br/>
+                                INSERT INTO test VALUES ('123');<br/>
+                                <br/>
+                                CREATE FUNCTION reffunc(refcursor) RETURNS refcursor AS '<br/>
+                                BEGIN<br/>
+                                    OPEN $1 FOR SELECT col FROM test;<br/>
+                                    RETURN $1;<br/>
+                                END;<br/>
+                                ' LANGUAGE plpgsql;<br/>
+                                <br/>
+                                BEGIN;<br/>
+                                SELECT reffunc('funccursor');<br/>
+                                FETCH ALL IN funccursor;<br/>
+                                COMMIT;<br/>
+                                <br/>
+                                
+                                
+                        </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide1214">
+                <div class="intro">
+                        <h3>PLSQL ->  CURSOR</h3>
+                        <p>       
+                                CREATE or replace FUNCTION reffunc2() RETURNS refcursor AS '<br/>
+                                DECLARE<br/>
+                                    ref refcursor;<br/>
+                                BEGIN<br/>
+                                    OPEN ref FOR SELECT col FROM test;<br/>
+                                    RETURN ref;<br/>
+                                END;<br/>
+                                ' LANGUAGE plpgsql;<br/>
+                                <br/>
+                                -- need to be in a transaction to use cursors.<br/>
+                                BEGIN;<br/>
+                                SELECT reffunc2();<br/>
+                                <br/>
+                                      reffunc2<br/>
+                                --------------------<br/>
+                                 <unnamed portal 2><br/>
+                                (1 row)<br/>
+                                <br/>
+                                FETCH ALL IN "<unnamed portal 2>";<br/>
+                                COMMIT;                 <br/>
+
+                        </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide1215">
+                <div class="intro">
+                        <h3>PLSQL ->  Errors and Messages</h3>
+                        <p>                        
+                                RAISE [ level ] 'format' [, expression [, ... ]] [ USING option = expression [, ... ] ];<br/>
+                                RAISE [ level ] condition_name [ USING option = expression [, ... ] ];<br/>
+                                RAISE [ level ] SQLSTATE 'sqlstate' [ USING option = expression [, ... ] ];<br/>
+                                RAISE [ level ] USING option = expression [, ... ];<br/>
+                                RAISE ;<br/>
+                                <br/>
+                                levels are DEBUG, LOG, INFO, NOTICE, WARNING, and EXCEPTION, with EXCEPTION being the default.<br/>
+                        </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide1216">
+                <div class="intro">
+                        <h3>USING</h3>
+                        <p>                        
+                                RAISE EXCEPTION 'Nonexistent ID --> %', user_id<br/>
+                                USING HINT = 'Please check your user ID';<br/>
+                                <br/>
+                                MESSAGE<br/>
+                                Sets the error message text. This option can't be used in the form of RAISE that includes a format string before USING.<br/>
+                                <br/>
+                                DETAIL<br/>
+                                    Supplies an error detail message.<br/>
+                                HINT<br/>
+                                    Supplies a hint message.<br/>
+                                ERRCODE<br/>
+                                Specifies the error code (SQLSTATE) to report, either by condition name, as shown in Appendix A, or directly as a five-character SQLSTATE code.<br/>
+
+                        </p>
+                </div>
+        </div>
+
+        <div class="slide" id="slide1217">
+                <div class="intro">
+                        <h3>TRIGGERS</h3>
+                        <p>                        
+                                NEW -> Tipo de dados RECORD; variável que mantém a nova linha do banco de dados para operações INSERT / UPDATE em acionadores de nível de linha. Essa variável não é atribuída nos gatilhos no nível de instrução e nas operações DELETE.<br/>
+                                OLD -> Tipo de dados RECORD; variável que mantém a linha antiga do banco de dados para operações UPDATE / DELETE em gatilhos de nível de linha. Esta variável não é atribuída em gatilhos no nível de instrução e para operações INSERT.<br/>
+                                TG_NAME -> Nome do tipo de dados; variável que contém o nome do gatilho disparado.<br/>
+                                TG_WHEN -> Texto do tipo de dados; uma cadeia de ANTES, DEPOIS ou INSÉDIO DE, dependendo da definição do acionador.<br/>
+                                TG_LEVEL -> Texto do tipo de dados; uma string de ROW ou STATEMENT, dependendo da definição do trigger.<br/>
+                                TG_OP -> Texto do tipo de dados; uma sequência de instruções INSERT, UPDATE, DELETE ou TRUNCATE para qual operação o acionador foi disparado.<br/>
+                                TG_RELID -> Tipo de dados oid; o ID do objeto da tabela que causou a invocação do acionador.<br/>
+                                TG_RELNAME -> Nome do tipo de dados; o nome da tabela que causou a invocação do acionador. Isso agora está obsoleto e pode desaparecer em uma versão futura. Use TG_TABLE_NAME em seu lugar.<br/>
+                                TG_TABLE_NAME -> Nome do tipo de dados; o nome da tabela que causou a invocação do acionador.<br/>
+                                TG_TABLE_SCHEMA ->Nome do tipo de dados; o nome do esquema da tabela que causou a invocação do acionador.<br/>
+                                TG_NARGS -> Tipo de dados inteiro; o número de argumentos fornecidos ao procedimento de acionamento na instrução CREATE TRIGGER.<br/>
+                                TG_ARGV [] -> Matriz de tipos de dados de texto; os argumentos da instrução CREATE TRIGGER. O índice conta a partir de 0. Índices inválidos (menor que 0 ou maior que ou igual a tg_nargs) resultam em um valor nulo.<br/>
+                        </p>
+                </div>
+        </div>
+
+        <div class="slide" id="slide1218">
+                <div class="intro">
+                        <h3>TRIGGERS</h3>
+                        <p>   
+                            CREATE TABLE emp (empname text,salary integer,last_date timestamp,last_user text);<br/>
+                            <br/>
+                            CREATE FUNCTION emp_stamp() RETURNS trigger AS $emp_stamp$<br/>
+                                BEGIN<br/>
+                                    -- Check that empname and salary are given<br/>
+                                    IF NEW.empname IS NULL THEN<br/>
+                                        RAISE EXCEPTION 'empname cannot be null';<br/>
+                                    END IF;<br/>
+                                    IF NEW.salary IS NULL THEN<br/>
+                                        RAISE EXCEPTION '% cannot have null salary', NEW.empname;<br/>
+                                    END IF;<br/>
+                                    <br/>
+                                    -- Who works for us when they must pay for it?<br/>
+                                    IF NEW.salary < 0 THEN<br/>
+                                        RAISE EXCEPTION '% cannot have a negative salary', NEW.empname;<br/>
+                                    END IF;<br/>
+                                    <br/>
+                                    -- Remember who changed the payroll when<br/>
+                                    NEW.last_date := current_timestamp;<br/>
+                                    NEW.last_user := current_user;<br/>
+                                    RETURN NEW;<br/>
+                                END;<br/>
+                            $emp_stamp$ LANGUAGE plpgsql;<br/>
+
+                        </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide1219">
+                <div class="intro">
+                        <h3>TRIGGERS</h3>
+                        <p>                        
+                                CREATE TRIGGER emp_stamp BEFORE INSERT OR UPDATE ON emp<br/>
+                                FOR EACH ROW EXECUTE PROCEDURE emp_stamp();<br/>
+                                <br/>
+                                <br/>
+                                insert into emp (empname,salary,last_date,last_user)VALUES('TESTE',-200,NOW(),'TESTE1')<br/>
+                                insert into emp (empname,salary,last_date,last_user)VALUES(null,200,NOW(),'TESTE1')<br/>
+                                insert into emp (empname,salary,last_date,last_user)VALUES('teste2',null,NOW(),'TESTE1')<br/>
+                        </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide1220">
+                <div class="intro">
+                        <h3>TRIGGERS</h3>
+                        <p>     
+                                CREATE TABLE emp (<br/>
+                                    empname           text NOT NULL,<br/>
+                                    salary            integer<br/>
+                                );<br/>
+                                <br/>
+                                CREATE TABLE emp_audit(<br/>
+                                    operation         char(1)   NOT NULL,<br/>
+                                    stamp             timestamp NOT NULL,<br/>
+                                    userid            text      NOT NULL,<br/>
+                                    empname           text      NOT NULL,<br/>
+                                    salary integer<br/>
+                                );                   <br/>
+                                <br/>
+                        </p>
+                </div>
+        </div>
+
+
+        <div class="slide" id="slide1221">
+                <div class="intro">
+                        <h3>TRIGGERS</h3>
+                        <p>                        
+
+                                CREATE OR REPLACE FUNCTION process_emp_audit() RETURNS TRIGGER AS $emp_audit$<br/>
+                                BEGIN<br/>
+                                    --<br/>
+                                    -- Create a row in emp_audit to reflect the operation performed on emp,<br/>
+                                    -- make use of the special variable TG_OP to work out the operation.<br/>
+                                    --<br/>
+                                    IF (TG_OP = 'DELETE') THEN<br/>
+                                        INSERT INTO emp_audit SELECT 'D', now(), user, OLD.*;<br/>
+                                        RETURN OLD;<br/>
+                                    ELSIF (TG_OP = 'UPDATE') THEN<br/>
+                                        INSERT INTO emp_audit SELECT 'U', now(), user, NEW.*;<br/>
+                                        RETURN NEW;<br/>
+                                    ELSIF (TG_OP = 'INSERT') THEN<br/>
+                                        INSERT INTO emp_audit SELECT 'I', now(), user, NEW.*;<br/>
+                                        RETURN NEW;<br/>
+                                    END IF;<br/>
+                                    RETURN NULL; -- result is ignored since this is an AFTER trigger<br/>
+                                END;<br/>
+                            $emp_audit$ LANGUAGE plpgsql;<br/>
+                            <br/>
+                        </p>
+                </div>
+        </div>
+
+
+
+        <div class="slide" id="slide1222">
+                <div class="intro">
+                        <h3>TRIGGERS</h3>
+                        <p>                        
+
+                                CREATE TRIGGER emp_audit<br/>
+                                AFTER INSERT OR UPDATE OR DELETE ON emp<br/>
+                                FOR EACH ROW EXECUTE PROCEDURE process_emp_audit();<br/>
+                                <br/>
+                                insert into emp(empname,salary)values('teste1',100)<br/>
+                                select * from emp_audit<br/>
+                                update emp set salary=200;<br/>
+                                delete from emp;<br/>
 
                         </p>
                 </div>
         </div>
 
   </div>
+
+
 
 
   <div class="section section_bg" id="section13">
