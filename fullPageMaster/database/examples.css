@@ -569,3 +569,9 @@ audio, canvas, img, svg, video {
 .comandsql{	
 	background-color: #cdcdcd;	
 }
+
+.alinhamento{
+	text-align: left !important;
+	margin-left: 22% !important;
+	background-color: #037FD5;
+}

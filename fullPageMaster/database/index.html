@@ -524,6 +524,7 @@
                         <p>   <b>Definição:</b><br/>
                                 Um dicionário de dados é um documento que descreve as informações representadas no modelo de dados, descrevendo informações de suas entidades e seus atributos ( tamanho, tipos de dado, obrigatoriedade e definição ). <br/><br/>
                                 Quando uma organização constrói um dicionário de dados de dimensão empresarial, o intuito deve ser o de padronizar precisamente definições semânticas a serem adotadas na empresa toda; portanto, ele deve incluir tanto definições semânticas como de representação para elementos de dados, sendo que os componentes semânticos focam na criação precisa do significado dos elementos de dados, e de outro lado, as definições de representação indicam como os elementos de dados são armazenados em uma estrutura de computador de acordo com seu tipo, ou seja, se são dados do tipo inteiro, caracter ou formato de data.
+                                <img src="imgs/dicionario.jpg" width="300px" height="250px"></img>
                         </p>
                     </div>
             </div>
@@ -548,11 +549,173 @@
                                 <br/>
                                 <b><i>Números reais.</i></b> <br/>
                                 <b>double:</b> Número em ponto flutuante de precisão dupla                                 <br/>
-                                <b>· Date:</b> Tipo data <br/>
+                                <b>Date:</b> Tipo data <br/>
                         </p>
                     </div>
             </div>
 
+
+            <div class="slide" id="slide481">
+                    <div class="intro">
+                        <h3>Data Type -> Numeric Types</h3>
+                        <p>       
+                            <table class="alinhamento">
+                                <tbody>
+                                   <th width="17%">Name</th> 
+                                   <th>Storage Size</th> 
+                                   <th>Description</th> 
+                                   <th>Range</th>                                    
+                                </tbody>                                    
+                               <tr>
+                                   <td  width="17%">smallint</td>
+                                   <td>2 bytes</td>
+                                   <td>small-range integer</td>
+                                   <td>-32768 to +32767</td>
+                               </tr>
+                               <tr>
+                                   <td  width="17%">integer</td>
+                                   <td>4 bytes</td>
+                                   <td>typical choice for integer</td>
+                                   <td>-2147483648 to +2147483647</td>
+                               </tr>
+                               <tr>
+                                   <td  width="17%">bigint</td>
+                                   <td>8 bytes</td>
+                                   <td>large-range integer</td>
+                                   <td>-9223372036854775808 to 9223372036854775807</td>
+                               </tr>
+                               <tr>
+                                    <td  width="17%">decimal 	   	</td>
+                                    <td>variable </td>
+                                    <td>user-specified precision</td>
+                                    <td>exact 	up to 131072 digits before the decimal point; up to 16383 digits after the decimal point</td>
+                                </tr>
+                                <tr>
+                                    <td  width="17%">numeric	</td>
+                                    <td>variable </td>
+                                    <td>user-specified precision</td>
+                                    <td>exact 	up to 131072 digits before the decimal point; up to 16383 digits after the decimal point</td>
+                                </tr>
+
+                                <tr>
+                                    <td  width="17%">real</td>
+                                    <td>4 bytes</td>
+                                    <td>variable-precision,inexact  </td>
+                                    <td>6 decimal digits precision</td>
+                                </tr>
+
+                                <tr>
+                                    <td  width="17%">double precision 	     	          </td>
+                                    <td>8 bytes </td>
+                                    <td>variable-precision,inexact</td>
+                                    <td>15 decimal digits precision</td>
+                                </tr>
+                                <tr>
+                                    <td  width="17%">smallserial 	         	</td>
+                                    <td>2 bytes</td>
+                                    <td>small autoincrementing integer</td>
+                                    <td>1 to 32767</td>
+                                </tr>
+                                <tr>
+                                    <td  width="17%">serial 	             </td>
+                                    <td>4 bytes </td>
+                                    <td>autoincrementing integer</td>
+                                    <td>1 to 2147483647</td>
+                                </tr>
+                                <tr>
+                                    <td  width="17%">bigserial </td>
+                                    <td>8 bytes</td>
+                                    <td>large autoincrementing integer </td>
+                                    <td>1 to 9223372036854775807</td>
+                                </tr>
+                            </table>    	             	 	                                    
+                             
+                        </p>
+                    </div>
+            </div>
+
+            <div class="slide" id="slide482">
+                    <div class="intro">
+                        <h3>Data Type -> Monetary Types</h3>
+                        <p>    
+                        money 	8 bytes 	currency amount 	-92233720368547758.08 to +92233720368547758.07  <br/>                          
+                        </p>
+                    </div>
+            </div>
+
+
+            <div class="slide" id="slide483">
+                    <div class="intro">
+                        <h3>Data Type -> Character Types</h3>
+                        <p>   
+                                1 	- character varying(n), varchar(n) variable-length with limit<br/>
+                                2 	- character(n), char(n) fixed-length, blank padded<br/>
+                                3 	- text variable unlimited length  <br/>      
+                        </p>
+                    </div>
+            </div>
+
+
+            <div class="slide" id="slide484">
+                    <div class="intro">
+                        <h3>Data Type -> Binary Data Types</h3>
+                        <p>  
+                                bytea 	1 or 4 bytes plus the actual binary string 	variable-length binary string                              
+                        </p>
+                    </div>
+            </div>
+
+
+            <div class="slide" id="slide485">
+                    <div class="intro">
+                        <h3>Data Type -> Date/Time Types</h3>
+                        <p>     
+                                imestamp [(p)] [without time zone ] 	    8 bytes 	both date and time (no time zone) 	4713 BC 	294276 AD<br/>
+                                timestamp [(p) ] with time zone 	        8 bytes 	both date and time, with time zone 	4713 BC 	294276 AD<br/>
+                                date 	                                    4 bytes 	date (no time of day) 	            4713 BC 	5874897 AD<br/>
+                                time [ (p)] [ without time zone ] 	        8 bytes 	time of day (no date) 	            00:00:00 	24:00:00<br/>
+                                time [ (p)] with time zone 	                12 bytes 	times of day only, with time zone 	00:00:00+1459 	24:00:00-1459<br/>
+                                interval [fields ] [(p) ] 	                12 bytes 	time interval 	                    -178000000 years 	178000000 years           <br/>
+                                            
+                        </p>
+                    </div>
+            </div>
+
+            <div class="slide" id="slide486">
+                    <div class="intro">
+                        <h3>Data Type -> Boolean Type</h3>
+                        <p>       
+                                boolean 	1 byte 	state of true or false    <br/>                     
+                        </p>
+                    </div>
+            </div>
+
+            <div class="slide" id="slide487">
+                    <div class="intro">
+                        <h3>Data Type -> Enumerated Type</h3>
+                        <p>  
+                                CREATE TYPE week AS ENUM ('Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'); <br/>                             
+                        </p>
+                    </div>
+            </div>
+
+            <div class="slide" id="slide488">
+                    <div class="intro">
+                        <h3>Data Type -> Geometric Type</h3>
+                        <p>                                
+                                point 	    16 bytes 	    Point on a plane 	                    (x,y)<br/>
+                                line 	    32 bytes 	    Infinite line (not fully implemented) 	((x1,y1),(x2,y2))<br/>
+                                lseg 	    32 bytes 	    Finite line segment 	                ((x1,y1),(x2,y2))<br/>
+                                box 	    32 bytes 	    Rectangular box 	                    ((x1,y1),(x2,y2))<br/>
+                                path 	    16+16n bytes 	Closed path (similar to polygon) 	    ((x1,y1),...)<br/>
+                                path 	    16+16n bytes 	Open path 	                            [(x1,y1),...]<br/>
+                                polygon 	40+16n 	        Polygon (similar to closed path) 	    ((x1,y1),...)<br/>
+                                circle 	    24 bytes 	    Circle 	                                <(x,y),r> (center point and radius) <br/>
+                        </p>
+                    </div>
+            </div>
+
+            
             <div class="slide" id="slide49">
                     <div class="intro">
                         <h3>EXEMPLO DE UM PROJETO DE BANCO DE DADOS</h3>
@@ -1967,9 +2130,61 @@
         <div class="section-title text-center">
                 <h5 class="title-bg">TCL</h5>
         </div>
-    <div class="intro">
-        <h1>Scroll Down Last 9</h1>
-    </div>
+
+
+        <div class="slide" id="slide1001">
+                <div class="intro">
+                    <h3>QUERY -> TRANSACTION -> TRANSACTION CONTROL</h3>
+                    <p>   
+                            The following commands are used to control transactions<br/>
+                            BEGIN OR BEGIN TRANSACTION − To start a transaction.<br/>
+                            COMMIT − To save the changes, alternatively you can use END TRANSACTION command.<br/>
+                            ROLLBACK − To rollback the changes<br/>
+                            <br/>
+                            Transactional control commands are only used with the DML commands INSERT, UPDATE and DELETE only. <br/>
+                            They cannot be used while creating tables or dropping them because these operations are automatically committed <br/>
+                            in the database.<br/>
+                    </p>
+                </div>
+            </div>    
+
+        <div class="slide" id="slide1002">
+            <div class="intro">
+                <h3>QUERY -> TRANSACTION -> LANGUAGE</h3>
+                <p>   
+
+                        No PostgreSQL, uma transação é configurada cercando os comandos SQL da transação com os comandos BEGIN e COMMIT.<br/>
+                        Então, nossa transação bancária seria, na verdade:<br/>
+                        BEGIN;<br/>
+                        UPDATE accounts SET balance = balance - 100.00 WHERE name = 'Alice';<br/>
+                        -- etc etc<br/>
+                        COMMIT;<br/>
+                </p>
+            </div>
+        </div>    
+
+
+        <div class="slide" id="slide1003">
+                <div class="intro">
+                    <h3>QUERY -> TRANSACTION -> SAVEPOINT</h3>
+                    <p>   
+    
+                            Lembrando-se do banco de dados do banco, suponha que nós debitemos $ 100,00 da conta de Alice e creditemos a conta de Bob,<br/> 
+                            apenas para descobrir depois que deveríamos ter creditado a conta de Wally.<br/>
+                            Poderíamos fazê-lo usando pontos de salvamento como este:<br/>
+                            <br/>
+                            BEGIN;<br/>
+                            UPDATE accounts SET balance = balance - 100.00 WHERE name = 'Alice';<br/>
+                            SAVEPOINT my_savepoint;<br/>
+                            UPDATE accounts SET balance = balance + 100.00 WHERE name = 'Bob';<br/>
+                            -- oops ... forget that and use Wally's account<br/>
+                            ROLLBACK TO my_savepoint;<br/>
+                            UPDATE accounts SET balance = balance + 100.00 WHERE name = 'Wally';<br/>
+                            COMMIT;<br/>
+                    </p>
+                </div>
+            </div>    
+    
   </div>
 
   <div class="section section_bg" id="section11">
